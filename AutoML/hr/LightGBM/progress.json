@@ -1,0 +1,1781 @@
+{
+    "fit_level": "finished",
+    "time_controller": {
+        "total_time_limit": 300,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "not_so_random",
+            "hill_climbing_1",
+            "hill_climbing_2",
+            "hill_climbing_3"
+        ],
+        "algorithms": [
+            "LightGBM"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 0.03526043891906738
+            },
+            {
+                "model_name": "1_Default_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "default_algorithms",
+                "train_time": 4.9633948802948
+            },
+            {
+                "model_name": "2_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.162175893783569
+            },
+            {
+                "model_name": "3_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.472136735916138
+            },
+            {
+                "model_name": "4_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.463108062744141
+            },
+            {
+                "model_name": "5_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.757150650024414
+            },
+            {
+                "model_name": "6_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.325167655944824
+            },
+            {
+                "model_name": "7_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.563905715942383
+            },
+            {
+                "model_name": "8_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.444713115692139
+            },
+            {
+                "model_name": "9_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.411590337753296
+            },
+            {
+                "model_name": "10_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "not_so_random",
+                "train_time": 4.627224683761597
+            },
+            {
+                "model_name": "11_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_1",
+                "train_time": 4.716368198394775
+            },
+            {
+                "model_name": "12_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_1",
+                "train_time": 4.8732171058654785
+            },
+            {
+                "model_name": "13_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_1",
+                "train_time": 4.383221387863159
+            },
+            {
+                "model_name": "14_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_1",
+                "train_time": 5.155335187911987
+            },
+            {
+                "model_name": "15_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_1",
+                "train_time": 4.883371591567993
+            },
+            {
+                "model_name": "16_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_2",
+                "train_time": 4.551524877548218
+            },
+            {
+                "model_name": "17_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_2",
+                "train_time": 4.830108880996704
+            },
+            {
+                "model_name": "18_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.171641826629639
+            },
+            {
+                "model_name": "19_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_3",
+                "train_time": 5.2995405197143555
+            },
+            {
+                "model_name": "20_LightGBM",
+                "model_type": "LightGBM",
+                "fit_level": "hill_climbing_3",
+                "train_time": 4.86591100692749
+            }
+        ],
+        "is_hill_climbing": true,
+        "is_stacking": false
+    },
+    "all_params": {
+        "default_algorithms": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "objective": "binary",
+                    "num_leaves": 63,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.9,
+                    "bagging_fraction": 0.9,
+                    "min_data_in_leaf": 10,
+                    "seed": 1,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "1_Default_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8675,
+                "train_time": 5.901262044906616,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "not_so_random": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary",
+                    "num_leaves": 15,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.8,
+                    "bagging_fraction": 0.5,
+                    "min_data_in_leaf": 50,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "2_LightGBM",
+                "status": "trained",
+                "final_loss": -0.875,
+                "train_time": 5.09856390953064,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1236,
+                    "objective": "binary",
+                    "num_leaves": 63,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 10,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "3_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8775,
+                "train_time": 5.422028303146362,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary",
+                    "num_leaves": 63,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.9,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 20,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "4_LightGBM",
+                "status": "trained",
+                "final_loss": -0.865,
+                "train_time": 5.418298959732056,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1238,
+                    "objective": "binary",
+                    "num_leaves": 95,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 1.0,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 10,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "5_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8666666666666667,
+                "train_time": 5.698037385940552,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 63,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "6_LightGBM",
+                "status": "trained",
+                "final_loss": -0.88,
+                "train_time": 5.261721134185791,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1240,
+                    "objective": "binary",
+                    "num_leaves": 127,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 0.5,
+                    "min_data_in_leaf": 20,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "7_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8725,
+                "train_time": 5.492964744567871,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1241,
+                    "objective": "binary",
+                    "num_leaves": 63,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.9,
+                    "bagging_fraction": 0.8,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "8_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8691666666666666,
+                "train_time": 5.372564792633057,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1242,
+                    "objective": "binary",
+                    "num_leaves": 31,
+                    "learning_rate": 0.1,
+                    "feature_fraction": 0.8,
+                    "bagging_fraction": 0.8,
+                    "min_data_in_leaf": 5,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "9_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8725,
+                "train_time": 5.345208406448364,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1243,
+                    "objective": "binary",
+                    "num_leaves": 15,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 1.0,
+                    "bagging_fraction": 0.5,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "10_LightGBM",
+                "status": "trained",
+                "final_loss": -0.87,
+                "train_time": 5.577131509780884,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "hill_climbing_1": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 31,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "11_LightGBM",
+                "status": "trained",
+                "final_loss": -0.88,
+                "train_time": 5.632908582687378,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 95,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "12_LightGBM",
+                "status": "trained",
+                "final_loss": -0.88,
+                "train_time": 5.79976487159729,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1236,
+                    "objective": "binary",
+                    "num_leaves": 31,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 10,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "13_LightGBM",
+                "status": "trained",
+                "final_loss": -0.875,
+                "train_time": 5.3294360637664795,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1236,
+                    "objective": "binary",
+                    "num_leaves": 95,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 10,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "14_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8733333333333333,
+                "train_time": 6.088683366775513,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary",
+                    "num_leaves": 31,
+                    "learning_rate": 0.05,
+                    "feature_fraction": 0.8,
+                    "bagging_fraction": 0.5,
+                    "min_data_in_leaf": 50,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "15_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8741666666666666,
+                "train_time": 5.79597806930542,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "hill_climbing_2": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 63,
+                    "learning_rate": 0.1,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "16_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8716666666666667,
+                "train_time": 5.49790358543396,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 31,
+                    "learning_rate": 0.1,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "17_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8716666666666667,
+                "train_time": 5.763617515563965,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 95,
+                    "learning_rate": 0.1,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "18_LightGBM",
+                "status": "trained",
+                "final_loss": -0.8716666666666667,
+                "train_time": 6.064471006393433,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "hill_climbing_3": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 127,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "19_LightGBM",
+                "status": "trained",
+                "final_loss": -0.88,
+                "train_time": 6.193699836730957,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/LightGBM"
+                },
+                "learner": {
+                    "model_type": "LightGBM",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary",
+                    "num_leaves": 15,
+                    "learning_rate": 0.2,
+                    "feature_fraction": 0.5,
+                    "bagging_fraction": 1.0,
+                    "min_data_in_leaf": 30,
+                    "metric": "custom",
+                    "custom_eval_metric_name": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "20_LightGBM",
+                "status": "trained",
+                "final_loss": -0.88,
+                "train_time": 5.822514533996582,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ]
+    },
+    "adjust_validation": false
+}

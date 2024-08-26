@@ -1,0 +1,752 @@
+{
+    "uid": "afd39cf5-38a3-4dfe-a97f-a948ef87a345",
+    "name": "14_Xgboost",
+    "preprocessing": [
+        {
+            "remove_columns": [
+                "EmployeeCount",
+                "Over18",
+                "StandardHours"
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "BusinessTravel": {
+                            "Non-Travel": 0,
+                            "Travel_Frequently": 1,
+                            "Travel_Rarely": 2
+                        },
+                        "Department": {
+                            "Human Resources": 0,
+                            "Research & Development": 1,
+                            "Sales": 2
+                        },
+                        "EducationField": {
+                            "Human Resources": 0,
+                            "Life Sciences": 1,
+                            "Marketing": 2,
+                            "Medical": 3,
+                            "Other": 4,
+                            "Technical Degree": 5
+                        },
+                        "Gender": {
+                            "Female": 0,
+                            "Male": 1
+                        },
+                        "JobRole": {
+                            "Healthcare Representative": 0,
+                            "Human Resources": 1,
+                            "Laboratory Technician": 2,
+                            "Manager": 3,
+                            "Manufacturing Director": 4,
+                            "Research Director": 5,
+                            "Research Scientist": 6,
+                            "Sales Executive": 7,
+                            "Sales Representative": 8
+                        },
+                        "MaritalStatus": {
+                            "Divorced": 0,
+                            "Married": 1,
+                            "Single": 2
+                        },
+                        "OverTime": {
+                            "No": 0,
+                            "Yes": 1
+                        }
+                    },
+                    "columns": [
+                        "BusinessTravel",
+                        "Department",
+                        "EducationField",
+                        "Gender",
+                        "JobRole",
+                        "MaritalStatus",
+                        "OverTime"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "No": 0,
+                "Yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "BusinessTravel": [
+                        "categorical_to_int"
+                    ],
+                    "Department": [
+                        "categorical_to_int"
+                    ],
+                    "EducationField": [
+                        "categorical_to_int"
+                    ],
+                    "EmployeeCount": [
+                        "remove_column"
+                    ],
+                    "Gender": [
+                        "categorical_to_int"
+                    ],
+                    "JobRole": [
+                        "categorical_to_int"
+                    ],
+                    "MaritalStatus": [
+                        "categorical_to_int"
+                    ],
+                    "Over18": [
+                        "remove_column"
+                    ],
+                    "OverTime": [
+                        "categorical_to_int"
+                    ],
+                    "StandardHours": [
+                        "remove_column"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        },
+        {
+            "remove_columns": [
+                "EmployeeCount",
+                "Over18",
+                "StandardHours"
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "BusinessTravel": {
+                            "Non-Travel": 0,
+                            "Travel_Frequently": 1,
+                            "Travel_Rarely": 2
+                        },
+                        "Department": {
+                            "Human Resources": 0,
+                            "Research & Development": 1,
+                            "Sales": 2
+                        },
+                        "EducationField": {
+                            "Human Resources": 0,
+                            "Life Sciences": 1,
+                            "Marketing": 2,
+                            "Medical": 3,
+                            "Other": 4,
+                            "Technical Degree": 5
+                        },
+                        "Gender": {
+                            "Female": 0,
+                            "Male": 1
+                        },
+                        "JobRole": {
+                            "Healthcare Representative": 0,
+                            "Human Resources": 1,
+                            "Laboratory Technician": 2,
+                            "Manager": 3,
+                            "Manufacturing Director": 4,
+                            "Research Director": 5,
+                            "Research Scientist": 6,
+                            "Sales Executive": 7,
+                            "Sales Representative": 8
+                        },
+                        "MaritalStatus": {
+                            "Divorced": 0,
+                            "Married": 1,
+                            "Single": 2
+                        },
+                        "OverTime": {
+                            "No": 0,
+                            "Yes": 1
+                        }
+                    },
+                    "columns": [
+                        "BusinessTravel",
+                        "Department",
+                        "EducationField",
+                        "Gender",
+                        "JobRole",
+                        "MaritalStatus",
+                        "OverTime"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "No": 0,
+                "Yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "BusinessTravel": [
+                        "categorical_to_int"
+                    ],
+                    "Department": [
+                        "categorical_to_int"
+                    ],
+                    "EducationField": [
+                        "categorical_to_int"
+                    ],
+                    "EmployeeCount": [
+                        "remove_column"
+                    ],
+                    "Gender": [
+                        "categorical_to_int"
+                    ],
+                    "JobRole": [
+                        "categorical_to_int"
+                    ],
+                    "MaritalStatus": [
+                        "categorical_to_int"
+                    ],
+                    "Over18": [
+                        "remove_column"
+                    ],
+                    "OverTime": [
+                        "categorical_to_int"
+                    ],
+                    "StandardHours": [
+                        "remove_column"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        },
+        {
+            "remove_columns": [
+                "EmployeeCount",
+                "Over18",
+                "StandardHours"
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "BusinessTravel": {
+                            "Non-Travel": 0,
+                            "Travel_Frequently": 1,
+                            "Travel_Rarely": 2
+                        },
+                        "Department": {
+                            "Human Resources": 0,
+                            "Research & Development": 1,
+                            "Sales": 2
+                        },
+                        "EducationField": {
+                            "Human Resources": 0,
+                            "Life Sciences": 1,
+                            "Marketing": 2,
+                            "Medical": 3,
+                            "Other": 4,
+                            "Technical Degree": 5
+                        },
+                        "Gender": {
+                            "Female": 0,
+                            "Male": 1
+                        },
+                        "JobRole": {
+                            "Healthcare Representative": 0,
+                            "Human Resources": 1,
+                            "Laboratory Technician": 2,
+                            "Manager": 3,
+                            "Manufacturing Director": 4,
+                            "Research Director": 5,
+                            "Research Scientist": 6,
+                            "Sales Executive": 7,
+                            "Sales Representative": 8
+                        },
+                        "MaritalStatus": {
+                            "Divorced": 0,
+                            "Married": 1,
+                            "Single": 2
+                        },
+                        "OverTime": {
+                            "No": 0,
+                            "Yes": 1
+                        }
+                    },
+                    "columns": [
+                        "BusinessTravel",
+                        "Department",
+                        "EducationField",
+                        "Gender",
+                        "JobRole",
+                        "MaritalStatus",
+                        "OverTime"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "No": 0,
+                "Yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "BusinessTravel": [
+                        "categorical_to_int"
+                    ],
+                    "Department": [
+                        "categorical_to_int"
+                    ],
+                    "EducationField": [
+                        "categorical_to_int"
+                    ],
+                    "EmployeeCount": [
+                        "remove_column"
+                    ],
+                    "Gender": [
+                        "categorical_to_int"
+                    ],
+                    "JobRole": [
+                        "categorical_to_int"
+                    ],
+                    "MaritalStatus": [
+                        "categorical_to_int"
+                    ],
+                    "Over18": [
+                        "remove_column"
+                    ],
+                    "OverTime": [
+                        "categorical_to_int"
+                    ],
+                    "StandardHours": [
+                        "remove_column"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        },
+        {
+            "remove_columns": [
+                "EmployeeCount",
+                "Over18",
+                "StandardHours"
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "BusinessTravel": {
+                            "Non-Travel": 0,
+                            "Travel_Frequently": 1,
+                            "Travel_Rarely": 2
+                        },
+                        "Department": {
+                            "Human Resources": 0,
+                            "Research & Development": 1,
+                            "Sales": 2
+                        },
+                        "EducationField": {
+                            "Human Resources": 0,
+                            "Life Sciences": 1,
+                            "Marketing": 2,
+                            "Medical": 3,
+                            "Other": 4,
+                            "Technical Degree": 5
+                        },
+                        "Gender": {
+                            "Female": 0,
+                            "Male": 1
+                        },
+                        "JobRole": {
+                            "Healthcare Representative": 0,
+                            "Human Resources": 1,
+                            "Laboratory Technician": 2,
+                            "Manager": 3,
+                            "Manufacturing Director": 4,
+                            "Research Director": 5,
+                            "Research Scientist": 6,
+                            "Sales Executive": 7,
+                            "Sales Representative": 8
+                        },
+                        "MaritalStatus": {
+                            "Divorced": 0,
+                            "Married": 1,
+                            "Single": 2
+                        },
+                        "OverTime": {
+                            "No": 0,
+                            "Yes": 1
+                        }
+                    },
+                    "columns": [
+                        "BusinessTravel",
+                        "Department",
+                        "EducationField",
+                        "Gender",
+                        "JobRole",
+                        "MaritalStatus",
+                        "OverTime"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "No": 0,
+                "Yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "BusinessTravel": [
+                        "categorical_to_int"
+                    ],
+                    "Department": [
+                        "categorical_to_int"
+                    ],
+                    "EducationField": [
+                        "categorical_to_int"
+                    ],
+                    "EmployeeCount": [
+                        "remove_column"
+                    ],
+                    "Gender": [
+                        "categorical_to_int"
+                    ],
+                    "JobRole": [
+                        "categorical_to_int"
+                    ],
+                    "MaritalStatus": [
+                        "categorical_to_int"
+                    ],
+                    "Over18": [
+                        "remove_column"
+                    ],
+                    "OverTime": [
+                        "categorical_to_int"
+                    ],
+                    "StandardHours": [
+                        "remove_column"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        },
+        {
+            "remove_columns": [
+                "EmployeeCount",
+                "Over18",
+                "StandardHours"
+            ],
+            "categorical": [
+                {
+                    "convert_method": "categorical_to_int",
+                    "convert_params": {
+                        "BusinessTravel": {
+                            "Non-Travel": 0,
+                            "Travel_Frequently": 1,
+                            "Travel_Rarely": 2
+                        },
+                        "Department": {
+                            "Human Resources": 0,
+                            "Research & Development": 1,
+                            "Sales": 2
+                        },
+                        "EducationField": {
+                            "Human Resources": 0,
+                            "Life Sciences": 1,
+                            "Marketing": 2,
+                            "Medical": 3,
+                            "Other": 4,
+                            "Technical Degree": 5
+                        },
+                        "Gender": {
+                            "Female": 0,
+                            "Male": 1
+                        },
+                        "JobRole": {
+                            "Healthcare Representative": 0,
+                            "Human Resources": 1,
+                            "Laboratory Technician": 2,
+                            "Manager": 3,
+                            "Manufacturing Director": 4,
+                            "Research Director": 5,
+                            "Research Scientist": 6,
+                            "Sales Executive": 7,
+                            "Sales Representative": 8
+                        },
+                        "MaritalStatus": {
+                            "Divorced": 0,
+                            "Married": 1,
+                            "Single": 2
+                        },
+                        "OverTime": {
+                            "No": 0,
+                            "Yes": 1
+                        }
+                    },
+                    "columns": [
+                        "BusinessTravel",
+                        "Department",
+                        "EducationField",
+                        "Gender",
+                        "JobRole",
+                        "MaritalStatus",
+                        "OverTime"
+                    ]
+                }
+            ],
+            "categorical_y": {
+                "No": 0,
+                "Yes": 1
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "BusinessTravel": [
+                        "categorical_to_int"
+                    ],
+                    "Department": [
+                        "categorical_to_int"
+                    ],
+                    "EducationField": [
+                        "categorical_to_int"
+                    ],
+                    "EmployeeCount": [
+                        "remove_column"
+                    ],
+                    "Gender": [
+                        "categorical_to_int"
+                    ],
+                    "JobRole": [
+                        "categorical_to_int"
+                    ],
+                    "MaritalStatus": [
+                        "categorical_to_int"
+                    ],
+                    "Over18": [
+                        "remove_column"
+                    ],
+                    "OverTime": [
+                        "categorical_to_int"
+                    ],
+                    "StandardHours": [
+                        "remove_column"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude",
+                    "categorical_to_int"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "2.1.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "edd6025c-ad67-48a1-bb06-e998eba30457",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "objective": "binary:logistic",
+                "eta": 0.05,
+                "max_depth": 8,
+                "min_child_weight": 5,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "eval_metric": "accuracy",
+                "explain_level": 2
+            },
+            "name": "learner_fold_0"
+        },
+        {
+            "library_version": "2.1.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "a5005a5c-c82a-49fc-acaf-10cd5ca68276",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "objective": "binary:logistic",
+                "eta": 0.05,
+                "max_depth": 8,
+                "min_child_weight": 5,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "eval_metric": "accuracy",
+                "explain_level": 2
+            },
+            "name": "learner_fold_1"
+        },
+        {
+            "library_version": "2.1.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "76a96f09-2270-4ce1-94e3-bfb3052d0b04",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "objective": "binary:logistic",
+                "eta": 0.05,
+                "max_depth": 8,
+                "min_child_weight": 5,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "eval_metric": "accuracy",
+                "explain_level": 2
+            },
+            "name": "learner_fold_2"
+        },
+        {
+            "library_version": "2.1.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "674e9cd9-4e24-40ef-bc6d-41825e5b1412",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "objective": "binary:logistic",
+                "eta": 0.05,
+                "max_depth": 8,
+                "min_child_weight": 5,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "eval_metric": "accuracy",
+                "explain_level": 2
+            },
+            "name": "learner_fold_3"
+        },
+        {
+            "library_version": "2.1.0",
+            "algorithm_name": "Extreme Gradient Boosting",
+            "algorithm_short_name": "Xgboost",
+            "uid": "1e5fd01d-3c91-4af4-bf0f-2cb68c96862f",
+            "params": {
+                "model_type": "Xgboost",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "objective": "binary:logistic",
+                "eta": 0.05,
+                "max_depth": 8,
+                "min_child_weight": 5,
+                "subsample": 1.0,
+                "colsample_bytree": 1.0,
+                "eval_metric": "accuracy",
+                "explain_level": 2
+            },
+            "name": "learner_fold_4"
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_rounds": 10000,
+            "early_stopping_rounds": 50,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "BusinessTravel": [
+                    "categorical_to_int"
+                ],
+                "Department": [
+                    "categorical_to_int"
+                ],
+                "EducationField": [
+                    "categorical_to_int"
+                ],
+                "EmployeeCount": [
+                    "remove_column"
+                ],
+                "Gender": [
+                    "categorical_to_int"
+                ],
+                "JobRole": [
+                    "categorical_to_int"
+                ],
+                "MaritalStatus": [
+                    "categorical_to_int"
+                ],
+                "Over18": [
+                    "remove_column"
+                ],
+                "OverTime": [
+                    "categorical_to_int"
+                ],
+                "StandardHours": [
+                    "remove_column"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude",
+                "categorical_to_int"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "kfold",
+            "k_folds": 5,
+            "shuffle": true,
+            "stratify": true,
+            "random_seed": 123,
+            "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+            "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+            "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+        },
+        "learner": {
+            "model_type": "Xgboost",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 1235,
+            "objective": "binary:logistic",
+            "eta": 0.05,
+            "max_depth": 8,
+            "min_child_weight": 5,
+            "subsample": 1.0,
+            "colsample_bytree": 1.0,
+            "eval_metric": "accuracy",
+            "explain_level": 2
+        },
+        "automl_random_state": 1234,
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "14_Xgboost",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original",
+        "max_time_for_learner": 60
+    },
+    "saved": [
+        "14_Xgboost\\learner_fold_0.xgboost.json",
+        "14_Xgboost\\learner_fold_1.xgboost.json",
+        "14_Xgboost\\learner_fold_2.xgboost.json",
+        "14_Xgboost\\learner_fold_3.xgboost.json",
+        "14_Xgboost\\learner_fold_4.xgboost.json"
+    ],
+    "predictions_fname": "14_Xgboost\\predictions_out_of_folds.csv",
+    "metric_name": "accuracy",
+    "final_loss": "-0.8708333333333333",
+    "train_time": 5.081005096435547,
+    "is_stacked": false,
+    "joblib_version": "1.4.2",
+    "threshold": 0.49887216091156006
+}

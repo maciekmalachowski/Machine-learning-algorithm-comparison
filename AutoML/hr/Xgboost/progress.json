@@ -1,0 +1,2019 @@
+{
+    "fit_level": "finished",
+    "time_controller": {
+        "total_time_limit": 300,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "not_so_random",
+            "hill_climbing_1",
+            "hill_climbing_2",
+            "hill_climbing_3"
+        ],
+        "algorithms": [
+            "Xgboost"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 0.03807330131530762
+            },
+            {
+                "model_name": "1_Default_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "default_algorithms",
+                "train_time": 10.206482887268066
+            },
+            {
+                "model_name": "2_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 4.394226551055908
+            },
+            {
+                "model_name": "3_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 4.251750230789185
+            },
+            {
+                "model_name": "4_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 4.553910255432129
+            },
+            {
+                "model_name": "5_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 3.3762199878692627
+            },
+            {
+                "model_name": "6_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 3.5837700366973877
+            },
+            {
+                "model_name": "7_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 4.434598684310913
+            },
+            {
+                "model_name": "8_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 4.755591630935669
+            },
+            {
+                "model_name": "9_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 3.8821139335632324
+            },
+            {
+                "model_name": "10_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "not_so_random",
+                "train_time": 5.103779554367065
+            },
+            {
+                "model_name": "11_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_1",
+                "train_time": 5.147226095199585
+            },
+            {
+                "model_name": "12_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_1",
+                "train_time": 5.243393421173096
+            },
+            {
+                "model_name": "13_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_1",
+                "train_time": 4.903562068939209
+            },
+            {
+                "model_name": "14_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_1",
+                "train_time": 5.081005096435547
+            },
+            {
+                "model_name": "15_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_1",
+                "train_time": 5.302939414978027
+            },
+            {
+                "model_name": "16_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.13634729385376
+            },
+            {
+                "model_name": "17_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.167870759963989
+            },
+            {
+                "model_name": "18_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.008333683013916
+            },
+            {
+                "model_name": "19_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.070165395736694
+            },
+            {
+                "model_name": "20_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.685352325439453
+            },
+            {
+                "model_name": "21_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_2",
+                "train_time": 5.706165313720703
+            },
+            {
+                "model_name": "22_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_3",
+                "train_time": 5.695544242858887
+            },
+            {
+                "model_name": "23_Xgboost",
+                "model_type": "Xgboost",
+                "fit_level": "hill_climbing_3",
+                "train_time": 5.646846532821655
+            }
+        ],
+        "is_hill_climbing": true,
+        "is_stacking": false
+    },
+    "all_params": {
+        "default_algorithms": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "objective": "binary:logistic",
+                    "eta": 0.075,
+                    "max_depth": 6,
+                    "min_child_weight": 1,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "seed": 1,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "1_Default_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8625,
+                "train_time": 11.177567481994629,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "not_so_random": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary:logistic",
+                    "eta": 0.075,
+                    "max_depth": 8,
+                    "min_child_weight": 5,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "2_Xgboost",
+                "status": "trained",
+                "final_loss": -0.875,
+                "train_time": 5.33470344543457,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1236,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 8,
+                    "min_child_weight": 1,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "3_Xgboost",
+                "status": "trained",
+                "final_loss": -0.865,
+                "train_time": 5.16646146774292,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 7,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "4_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8775,
+                "train_time": 5.462743759155273,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1238,
+                    "objective": "binary:logistic",
+                    "eta": 0.15,
+                    "max_depth": 8,
+                    "min_child_weight": 50,
+                    "subsample": 0.6,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "5_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8383333333333334,
+                "train_time": 4.27588152885437,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1239,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 6,
+                    "min_child_weight": 50,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.7,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "6_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8383333333333334,
+                "train_time": 4.4984118938446045,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1240,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 4,
+                    "min_child_weight": 25,
+                    "subsample": 0.7,
+                    "colsample_bytree": 0.7,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "7_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8675,
+                "train_time": 5.360280990600586,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1241,
+                    "objective": "binary:logistic",
+                    "eta": 0.05,
+                    "max_depth": 8,
+                    "min_child_weight": 5,
+                    "subsample": 0.5,
+                    "colsample_bytree": 0.8,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "8_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8766666666666667,
+                "train_time": 5.664370059967041,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1242,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 7,
+                    "min_child_weight": 50,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "9_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8383333333333334,
+                "train_time": 4.801257610321045,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1243,
+                    "objective": "binary:logistic",
+                    "eta": 0.05,
+                    "max_depth": 7,
+                    "min_child_weight": 1,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.9,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "10_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8658333333333333,
+                "train_time": 6.043794393539429,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "hill_climbing_1": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.075,
+                    "max_depth": 7,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "11_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8716666666666667,
+                "train_time": 6.072590351104736,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.15,
+                    "max_depth": 7,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "12_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8816666666666667,
+                "train_time": 6.151465892791748,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1241,
+                    "objective": "binary:logistic",
+                    "eta": 0.075,
+                    "max_depth": 8,
+                    "min_child_weight": 5,
+                    "subsample": 0.5,
+                    "colsample_bytree": 0.8,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "13_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8758333333333334,
+                "train_time": 5.833415508270264,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary:logistic",
+                    "eta": 0.05,
+                    "max_depth": 8,
+                    "min_child_weight": 5,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "14_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8708333333333333,
+                "train_time": 5.998495817184448,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 8,
+                    "min_child_weight": 5,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "15_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8791666666666667,
+                "train_time": 6.210398197174072,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "hill_climbing_2": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.15,
+                    "max_depth": 6,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "16_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8816666666666667,
+                "train_time": 6.058937072753906,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.15,
+                    "max_depth": 8,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "17_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8816666666666667,
+                "train_time": 6.073607683181763,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 7,
+                    "min_child_weight": 5,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "18_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8725,
+                "train_time": 5.947965621948242,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 9,
+                    "min_child_weight": 5,
+                    "subsample": 1.0,
+                    "colsample_bytree": 1.0,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "19_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8741666666666666,
+                "train_time": 5.9910728931427,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 6,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "20_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8775,
+                "train_time": 6.62274694442749,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.1,
+                    "max_depth": 8,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "21_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8775,
+                "train_time": 6.623679876327515,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ],
+        "hill_climbing_3": [
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.15,
+                    "max_depth": 9,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "22_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8816666666666667,
+                "train_time": 6.665780067443848,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            },
+            {
+                "additional": {
+                    "max_rounds": 10000,
+                    "early_stopping_rounds": 50,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "BusinessTravel": [
+                            "categorical_to_int"
+                        ],
+                        "Department": [
+                            "categorical_to_int"
+                        ],
+                        "EducationField": [
+                            "categorical_to_int"
+                        ],
+                        "EmployeeCount": [
+                            "remove_column"
+                        ],
+                        "Gender": [
+                            "categorical_to_int"
+                        ],
+                        "JobRole": [
+                            "categorical_to_int"
+                        ],
+                        "MaritalStatus": [
+                            "categorical_to_int"
+                        ],
+                        "Over18": [
+                            "remove_column"
+                        ],
+                        "OverTime": [
+                            "categorical_to_int"
+                        ],
+                        "StandardHours": [
+                            "remove_column"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude",
+                        "categorical_to_int"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "kfold",
+                    "k_folds": 5,
+                    "shuffle": true,
+                    "stratify": true,
+                    "random_seed": 123,
+                    "X_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\X.data",
+                    "y_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost\\y.data",
+                    "results_path": "C:\\Users\\Maciek\\Machine-learning-model-comparison\\AutoML/hr/Xgboost"
+                },
+                "learner": {
+                    "model_type": "Xgboost",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1237,
+                    "objective": "binary:logistic",
+                    "eta": 0.15,
+                    "max_depth": 5,
+                    "min_child_weight": 25,
+                    "subsample": 0.9,
+                    "colsample_bytree": 0.6,
+                    "eval_metric": "accuracy",
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "23_Xgboost",
+                "status": "trained",
+                "final_loss": -0.8816666666666667,
+                "train_time": 6.58968186378479,
+                "data_type": "original",
+                "max_time_for_learner": 60
+            }
+        ]
+    },
+    "adjust_validation": false
+}

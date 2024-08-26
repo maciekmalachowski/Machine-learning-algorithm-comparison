@@ -9,7 +9,5 @@ def get_data():
     X = data.data
     y = data.target
     y = y.astype("int")
-    # split data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.90, shuffle=True, stratify=y, random_state=42)
 
-    return name, X_train, X_test, y_train, y_test, dataset_type
+    return X, y, name, dataset_type

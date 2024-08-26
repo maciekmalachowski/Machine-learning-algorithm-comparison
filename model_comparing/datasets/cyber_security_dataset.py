@@ -8,7 +8,5 @@ def get_data():
     data = fetch_openml(data_id=4534, as_frame=True)
     X = data.data
     y = data.target
-    # split data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.95, shuffle=True, stratify=y, random_state=42)
-
-    return name, X_train, X_test, y_train, y_test, dataset_type
+   
+    return X, y, name, dataset_type
