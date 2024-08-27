@@ -1,5 +1,4 @@
 from sklearn.datasets import fetch_openml
-from sklearn.model_selection import train_test_split
 
 def get_data():
     # read data from openml page

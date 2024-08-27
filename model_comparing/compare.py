@@ -7,11 +7,11 @@ from datasets import biology_dataset, climate_dataset, cyber_security_dataset, d
 datasets = [
     # biology_dataset.get_data(), 
     # climate_dataset.get_data(), 
-    # cyber_security_dataset.get_data(), 
+    # cyber_security_dataset.get_data(),
     # dating_dataset.get_data(),
     # energy_datset.get_data(),
     # financial_dataset.get_data(),
-    # housing_dataset.get_data(),
+    housing_dataset.get_data(),
     hr_dataset.get_data(),
     # medical_dataset.get_data(),
     # sales_dataset.get_data(),
@@ -25,13 +25,20 @@ algorithms=[
         # "Random Forest",
         # "Extra Trees",
         "Xgboost",
-        "LightGBM",
+        # "LightGBM",
         # "CatBoost",
         # "Neural Network",
         # "Nearest Neighbors"
     ]
 
 model_data = []
+
+ldb = {
+            "name": [],
+            "eval_metric": [],
+            "metric_value": [],
+            "dataset": []
+        }
 
 for data in datasets:
     for al in algorithms:
@@ -69,18 +76,22 @@ for data in datasets:
         # train automl
         automl.fit(data[0], data[1])
 
+        # choose best model
         best_value = 0
         for m in automl._models:
             if m.get_final_loss() < 0:
                 metric_value = m.get_final_loss()*(-1)
             else:
                 metric_value = m.get_final_loss()
-            print(metric_value)
             if metric_value >= best_value:
                 best_value = metric_value
 
-        print(f"best value: {best_value}")
+        # make leaderboard
+        ldb["name"] += [m.get_type()]
+        ldb["eval_metric"] += [automl._eval_metric]
+        ldb["metric_value"] += [best_value]
+        ldb["dataset"] += [data[2]]
 
-        model_data.append([data[2], al, best_value])
+ldb = pd.DataFrame(ldb)
 
-print(model_data)
+print(ldb)
