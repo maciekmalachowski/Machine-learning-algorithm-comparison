@@ -1,10 +1,9 @@
 import pandas as pd
 
 def get_data():
-    name = "student"
+    name = "Student Performance"
     dataset_type = "class"
     df = pd.read_csv("C:/Users/Maciek/W_my_notebooks/student/student-por.csv", delimiter=";")
-    
     # create X columns list and set y column
     x_cols = ["school", "sex", "age", "address", "famsize", "Pstatus", "Medu", "Fedu", "Mjob", "Fjob", "reason", "guardian", "traveltime", "studytime", "failures", "schoolsup", "famsup", "paid", "activities", "nursery", "higher", "internet", "romantic", "famrel", "freetime", "goout", "Dalc", "Walc", "health", "absences"]
     y_col = "G3"

@@ -2,9 +2,9 @@ from sklearn.datasets import fetch_openml
 
 def get_data():
     # read data from openml page
-    name = "sales"
+    name = "Climate Model Simulation"
     dataset_type = "class"
-    data = fetch_openml(data_id=1461, as_frame=True)
+    data = fetch_openml(data_id=1467, as_frame=True)
     X = data.data
     y = data.target
 

@@ -1,7 +1,7 @@
 import pandas as pd
 
 def get_data():
-    name = "energy"
+    name = "Energy Appliances"
     dataset_type = "reg"
     df = pd.read_csv(r"C:/Users/Maciek/W_my_notebooks/energy/energydata_complete.csv")
     # create X columns list and set y column
