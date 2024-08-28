@@ -8,3 +8,12 @@ QSAR Biodegradation,LightGBM,accuracy,0.8862559241706162
 QSAR Biodegradation,CatBoost,accuracy,0.8890995260663507
 QSAR Biodegradation,Neural Network,accuracy,0.8834123222748815
 QSAR Biodegradation,Nearest Neighbors,accuracy,0.8663507109004739
+Climate Model Simulation,Baseline,accuracy,0.9148148148148149
+Climate Model Simulation,Decision Tree,accuracy,0.9148148148148149
+Climate Model Simulation,Random Forest,accuracy,0.9277777777777778
+Climate Model Simulation,Extra Trees,accuracy,0.9277777777777778
+Climate Model Simulation,Xgboost,accuracy,0.924074074074074
+Climate Model Simulation,LightGBM,accuracy,0.9296296296296296
+Climate Model Simulation,CatBoost,accuracy,0.924074074074074
+Climate Model Simulation,Neural Network,accuracy,0.9148148148148149
+Climate Model Simulation,Nearest Neighbors,accuracy,0.9092592592592592

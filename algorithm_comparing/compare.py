@@ -23,17 +23,17 @@ def generate_models():
     ]
 
     algorithms=[
-            # "Baseline",
-            # "Linear",
-            # "Decision Tree",
-            # "Random Forest",
-            # "Extra Trees",
-            "Xgboost",
-            # "LightGBM",
-            # "CatBoost",
-            # "Neural Network",
-            # "Nearest Neighbors"
-        ]
+        "Baseline",
+        # "Linear",
+        "Decision Tree",
+        "Random Forest",
+        "Extra Trees",
+        "Xgboost",
+        "LightGBM",
+        "CatBoost",
+        "Neural Network",
+        "Nearest Neighbors"
+    ]
 
     ldb = {
             "dataset": [],
@@ -45,9 +45,8 @@ def generate_models():
     for data in datasets:
         for al in algorithms:
             # make directions
-            final_path = os.path.join(f"{os.getcwd()}", f"AutoML/{data[2]}/{al}")
-            if not os.path.exists(final_path):
-                os.makedirs(final_path)
+            if not os.path.exists(f"AutoML/{data[2]}/{al}"):
+                os.makedirs(f"AutoML/{data[2]}/{al}")
 
             if data[-1] == "reg":
                 eval_metric = "mse"
@@ -58,7 +57,7 @@ def generate_models():
             automl = AutoML(
                 mode="Compete", 
                 total_time_limit=60, 
-                results_path=final_path, 
+                results_path=f"AutoML/{data[2]}/{al}", 
                 algorithms=[al], 
                 train_ensemble=False,
                 golden_features=False,
@@ -99,28 +98,53 @@ def generate_models():
             ldb["eval_metric"] += [automl._eval_metric]
             ldb["metric_value"] += [best_value]
 
-        ldb = pd.DataFrame(ldb)
+        df = pd.DataFrame(ldb)
         os.makedirs('model_leaderboard', exist_ok=True)  
-        ldb.to_csv('model_leaderboard/leaderboard.csv', index=False) 
+        df.to_csv('model_leaderboard/leaderboard.csv', index=False) 
 
 def generate_plots():
-    df = pd.read_csv("leaderboard.csv")
-    for index, row1 in df.iterrows():
-        for index, row2 in df.iterrows():
-            if row1['name'] != row2['name']:
-                plot_df = pd.DataFrame(data={'name': [row1['name'], row2['name']], 'metric_value': [row1['metric_value'], row2['metric_value']]})
-                plot_df = plot_df.pivot(columns="name", values="metric_value")
-                ax = sns.barplot(plot_df)
-                ax.set(xlabel='', ylabel=row1['eval_metric']) # ylabel to change
-                ax.set(ylim=(0, 1))
-                plt.title(f"{row1['dataset']}: {row1['name']} - {row2['name']}")
-                for i in ax.containers:
-                    ax.bar_label(i,)
-                if not os.path.exists(f"model_leaderboard/{row1['dataset']}"):
-                    os.makedirs(f"model_leaderboard/{row1['dataset']}")
-                plt.savefig(f'model_leaderboard/{row1['dataset']}/{row1['name']}-{row2['name']}.png')
-                plt.close()
+    df = pd.read_csv("model_leaderboard/leaderboard.csv")
+    datasets = df['dataset'].unique()
+    algorithms = df['name'].unique()
+    used_combos = []
 
+    for alg1 in algorithms:
+        for alg2 in algorithms:
+            for data in datasets:
+                if alg1 != alg2:
+                    if (f"{data}-{alg1}-{alg2}" and f"{data}-{alg2}-{alg1}") not in used_combos:
+                        metric1 = df.loc[(df['dataset']==data) & (df['name']==alg1), 'metric_value'].item()
+                        metric2 = df.loc[(df['dataset']==data) & (df['name']==alg2), 'metric_value'].item()
+                        plot_df = pd.DataFrame(data={'name': [alg1, alg2], 'metric_value': [metric1, metric2]})
+                        plot_df = plot_df.pivot(columns="name", values="metric_value")
+
+                        ax = sns.barplot(plot_df)
+                        if metric1 > metric2:
+                            ax.plot(0, 0.5, "*", markersize=50, color="yellow")
+
+                        elif metric1 < metric2:
+                            ax.plot(1, 0.5, "*", markersize=50, color="yellow")
+
+                        ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
+
+                        plt.title(f"{data}")
+                        for i in ax.containers:
+                            ax.bar_label(i,)
+                        
+                        if df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0] == 'accuracy':
+                            ax.set(ylim=(0, 1))
+                        
+                        name1 = alg1.replace(" ", "-").lower()
+                        name2 = alg2.replace(" ", "-").lower()
+                        data_name = data.replace(" ", "-").lower()
+                        
+                        if not os.path.exists(f"model_leaderboard/{name1}-vs-{name2}"):
+                            os.makedirs(f"model_leaderboard/{name1}-vs-{name2}")
+                        plt.savefig(f'model_leaderboard/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
+                        plt.close()
+                        
+                        used_combos.append(f"{data}-{alg1}-{alg2}")
+                        used_combos.append(f"{data}-{alg2}-{alg1}")
 
 # generate_models()
 generate_plots()
