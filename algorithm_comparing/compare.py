@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import seaborn as sns
+import json
 import matplotlib.pyplot as plt
 from supervised import AutoML
 
@@ -23,16 +24,14 @@ def generate_models():
     ]
 
     algorithms=[
-        "Baseline",
-        # "Linear",
-        "Decision Tree",
-        "Random Forest",
-        "Extra Trees",
-        "Xgboost",
-        "LightGBM",
-        "CatBoost",
-        "Neural Network",
-        "Nearest Neighbors"
+            'Baseline',
+            'CatBoost',
+            'Decision Tree',
+            'Extra Trees',
+            'LightGBM',
+            'Nearest Neighbors',
+            'Neural Network',
+            'Random Forest','Xgboost'
     ]
 
     ldb = {
@@ -99,20 +98,27 @@ def generate_models():
             ldb["metric_value"] += [best_value]
 
         df = pd.DataFrame(ldb)
-        os.makedirs('model_leaderboard', exist_ok=True)  
-        df.to_csv('model_leaderboard/leaderboard.csv', index=False) 
+        os.makedirs('algorithm_leaderboard', exist_ok=True)  
+        df.to_csv('algorithm_leaderboard.csv', index=False) 
 
 def generate_plots():
-    df = pd.read_csv("model_leaderboard/leaderboard.csv")
+    df = pd.read_csv("algorithm_leaderboard.csv")
     datasets = df['dataset'].unique()
     algorithms = df['name'].unique()
     used_combos = []
 
     for alg1 in algorithms:
         for alg2 in algorithms:
-            for data in datasets:
-                if alg1 != alg2:
-                    if (f"{data}-{alg1}-{alg2}" and f"{data}-{alg2}-{alg1}") not in used_combos:
+            if alg1 != alg2:
+                name1 = alg1.replace(" ", "-").lower()
+                name2 = alg2.replace(" ", "-").lower()
+                score = {
+                    name1: 0,
+                    name2: 0
+                }
+                for data in datasets:
+                    data_name = data.replace(" ", "-").lower()
+                    if (f"{data_name}-{alg1}-{alg2}" and f"{data_name}-{alg2}-{alg1}") not in used_combos:
                         metric1 = df.loc[(df['dataset']==data) & (df['name']==alg1), 'metric_value'].item()
                         metric2 = df.loc[(df['dataset']==data) & (df['name']==alg2), 'metric_value'].item()
                         plot_df = pd.DataFrame(data={'name': [alg1, alg2], 'metric_value': [metric1, metric2]})
@@ -120,9 +126,11 @@ def generate_plots():
 
                         ax = sns.barplot(plot_df)
                         if metric1 > metric2:
+                            score[name1] += 1
                             ax.plot(0, 0.5, "*", markersize=50, color="yellow")
 
                         elif metric1 < metric2:
+                            score[name2] += 1
                             ax.plot(1, 0.5, "*", markersize=50, color="yellow")
 
                         ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
@@ -134,17 +142,17 @@ def generate_plots():
                         if df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0] == 'accuracy':
                             ax.set(ylim=(0, 1))
                         
-                        name1 = alg1.replace(" ", "-").lower()
-                        name2 = alg2.replace(" ", "-").lower()
-                        data_name = data.replace(" ", "-").lower()
                         
-                        if not os.path.exists(f"model_leaderboard/{name1}-vs-{name2}"):
-                            os.makedirs(f"model_leaderboard/{name1}-vs-{name2}")
-                        plt.savefig(f'model_leaderboard/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
+                        if not os.path.exists(f"comparison_plots/{name1}-vs-{name2}"):
+                            os.makedirs(f"comparison_plots/{name1}-vs-{name2}")
+                        plt.savefig(f'comparison_plots/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
                         plt.close()
+
+                        with open(f"comparison_plots/{name1}-vs-{name2}/score.json", "w") as outfile:
+                            json.dump(score, outfile)
                         
-                        used_combos.append(f"{data}-{alg1}-{alg2}")
-                        used_combos.append(f"{data}-{alg2}-{alg1}")
+                        used_combos.append(f"{data_name}-{alg1}-{alg2}")
+                        used_combos.append(f"{data_name}-{alg2}-{alg1}")
 
 # generate_models()
 generate_plots()
