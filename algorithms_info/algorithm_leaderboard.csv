@@ -1,0 +1,7 @@
+dataset,dataset_type,name,eval_metric,metric_value
+Abalone,reg,LightGBM,rmse,2.188921040647052
+Abalone,reg,Random Forest,rmse,2.4665567174957705
+Abalone,reg,Xgboost,rmse,2.2046711475170864
+Adult,binary,LightGBM,accuracy,0.8761107243765611
+Adult,binary,Random Forest,accuracy,0.8579296507104541
+Adult,binary,Xgboost,accuracy,0.8758240858277712

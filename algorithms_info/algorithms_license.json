@@ -1,0 +1,11 @@
+{
+    "baseline": "License for Scikit-Learn implementation of Baseline: New BSD License",
+    "catboost": "Apache-2.0 License",
+    "decision-tree": "License for Scikit-Learn implementation of Decision Tree: New BSD License",
+    "extra-trees": "License for Scikit-Learn implementation of Extra Trees: New BSD License",
+    "lightgbm": "MIT License",
+    "nearest-neighbors": "License for Scikit-Learn implementation of Nearest Neighbors: New BSD License",
+    "neural-network": "License for Scikit-Learn implementation of Neural Network: New BSD License",
+    "random-forest": "License for Scikit-Learn implementation of Random Forest: New BSD License",
+    "xgboost": "Apache-2.0 License"
+}
