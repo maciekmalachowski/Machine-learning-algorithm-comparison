@@ -2,7 +2,7 @@
     "adult":
     {
         "type": "Binary classification",
-        "desc": "This is Abalone data. Predicting the age of abalone from physical measurements. The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope. There are other, easier to obtain measurements to predict the age. Further information can be used, such as weather patterns and location (hence food availability).",
+        "desc": "This is an Adult database. The prediction task is to determine whether a person makes over 50K a year. Data extraction was done by Barry Becker from the 1994 Census database. Variables are all self-explanatory except __fnlwgt__. This is a proxy for the people's demographic background: 'People with similar demographic characteristics should have similar weights.' This similarity-statement is not relevant in all the different 51 states.",
         "metric": "Accuracy",
         "category": "People",
         "rows": "48,842",

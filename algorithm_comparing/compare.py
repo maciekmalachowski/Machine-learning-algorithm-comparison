@@ -9,13 +9,13 @@ from datasets import abalone, adult, airlines_depdelay_1m,  allstate_claims_seve
 
 def generate_models():
     datasets = [
-        abalone.get_data(),
-        adult.get_data(),
+        # abalone.get_data(), # nearest_neighbors
+        # adult.get_data(),
         # airlines_depdelay_1m.get_data(),
         # allstate_claims_severity.get_data(),
         # amazon_commerce_reviews.get_data(),
         # amazon_employee_access.get_data(),
-        # apsfailure.get_data(),
+        apsfailure.get_data(),
         # bank_marketing.get_data(),
         # banknote_authentication.get_data(),
         # bioresponse.get_data(),
@@ -54,13 +54,13 @@ def generate_models():
     ]
 
     algorithms=[
-            # 'Baseline',
-            # 'CatBoost',
-            # 'Decision Tree',
-            # 'Extra Trees',
+            'Baseline',
+            'CatBoost',
+            'Decision Tree',
+            'Extra Trees',
             'LightGBM',
             # 'Nearest Neighbors',
-            # 'Neural Network',
+            'Neural Network',
             'Random Forest',
             'Xgboost'
     ]
@@ -130,9 +130,11 @@ def generate_models():
             ldb["eval_metric"] += [automl._eval_metric]
             ldb["metric_value"] += [best_value]
 
-        df = pd.DataFrame(ldb)
-        os.makedirs('algorithms_info', exist_ok=True)  
-        df.to_csv('algorithms_info/algorithm_leaderboard.csv', index=False) 
+            df = pd.DataFrame(ldb)
+            # os.makedirs('algorithms_info', exist_ok=True) 
+            df.to_csv('algorithms_info/algorithm_leaderboard.csv', index=False) 
+
+            del df
 
 def compare():
     df = pd.read_csv("algorithms_info/algorithm_leaderboard.csv")
@@ -168,23 +170,42 @@ def compare():
                         plot_df = plot_df.pivot(columns="name", values="metric_value")
 
                         ax = sns.barplot(plot_df)
-                        if metric1 > metric2:
-                            ax.plot(0, 0.5, "*", markersize=50, color="yellow")
-                            if df_type=="binary":
-                                score[name1]['binary'] += 1
-                            elif df_type=="multi":
-                                score[name1]['multi'] += 1
-                            elif df_type=="reg":
-                                score[name1]['reg'] += 1
+                        if df.loc[(df['dataset']==data) & (df['name']==alg1), 'eval_metric'].item() == 'accuracy':
+                            if metric1 > metric2:
+                                ax.plot(0, 0.5, "*", markersize=50, color="yellow")
+                                if df_type=="binary":
+                                    score[name1]['binary'] += 1
+                                elif df_type=="multi":
+                                    score[name1]['multi'] += 1
+                                elif df_type=="reg":
+                                    score[name1]['reg'] += 1
 
-                        elif metric1 < metric2:
-                            ax.plot(1, 0.5, "*", markersize=50, color="yellow")
-                            if df_type=="binary":
-                                score[name2]['binary'] += 1
-                            elif df_type=="multi":
-                                score[name2]['multi'] += 1
-                            elif df_type=="reg":
-                                score[name2]['reg'] += 1
+                            elif metric1 < metric2:
+                                ax.plot(1, 0.5, "*", markersize=50, color="yellow")
+                                if df_type=="binary":
+                                    score[name2]['binary'] += 1
+                                elif df_type=="multi":
+                                    score[name2]['multi'] += 1
+                                elif df_type=="reg":
+                                    score[name2]['reg'] += 1
+                        else:
+                            if metric1 < metric2:
+                                ax.plot(0, 0.5, "*", markersize=50, color="yellow")
+                                if df_type=="binary":
+                                    score[name1]['binary'] += 1
+                                elif df_type=="multi":
+                                    score[name1]['multi'] += 1
+                                elif df_type=="reg":
+                                    score[name1]['reg'] += 1
+
+                            elif metric1 > metric2:
+                                ax.plot(1, 0.5, "*", markersize=50, color="yellow")
+                                if df_type=="binary":
+                                    score[name2]['binary'] += 1
+                                elif df_type=="multi":
+                                    score[name2]['multi'] += 1
+                                elif df_type=="reg":
+                                    score[name2]['reg'] += 1
 
                         ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
 
@@ -193,7 +214,7 @@ def compare():
                             ax.bar_label(i,)
                         
                         if df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0] == 'accuracy':
-                            ax.set(ylim=(0, 1))
+                            ax.set(ylim=(0, 1.1))
                         
                         
                         if not os.path.exists(f"comparison_plots/{name1}-vs-{name2}"):
@@ -220,7 +241,7 @@ def compare():
                         used_combos.append(f"{data_name}-{alg1}-{alg2}")
                         used_combos.append(f"{data_name}-{alg2}-{alg1}")
 
-                        generate_md(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}", f"machine-learning/{name1}-vs-{name2}", f"{alg1}", f"{alg2}")
+                        generate_md(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}", f"machine-learning/{name1}-vs-{name2}", alg1, alg2)
 
 
 def generate_md(path, rel_path, alg1, alg2):
@@ -240,7 +261,6 @@ def generate_md(path, rel_path, alg1, alg2):
     reference = json.load(json_ref)
     datasets = json.load(json_datasets)
 
-    os.makedirs('markdowns', exist_ok=True) 
     md_file = open(f"C:/Users/Maciek/website-mljar/src/content/machine-learning/{name1}-vs-{name2}.md", "w")
 
     content = f'''---
@@ -292,7 +312,7 @@ title: "{alg1} vs {alg2}"
 <hr>
 <div class="flex flex-row">
 <div class="basis-1/2 text-center">
-<h2 class="text-4xl mb-2">Binary classification</h2>
+<h2 class="text-4xl mb-2 mt-2">Binary classification</h2>
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["binary"]}:{score[name2]["binary"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
 <h2 class="text-4xl mb-2">Multiclass classification</h2>
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["multi"]}:{score[name2]["multi"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
@@ -309,6 +329,11 @@ title: "{alg1} vs {alg2}"
 '''
     types = ["Binary classification", "Multiclass classification", "Regression"]
     for i in range(3):
+        content += f'''
+<div class="w-full text-center text-3xl">
+<h2>{types[i]}</h2>
+</div>
+'''
         for plot in os.listdir(path):
             if (plot.endswith(".png")):
                 dataset_name = os.path.relpath(plot).replace(f"_{name1}-vs-{name2}.png", "")
@@ -316,15 +341,12 @@ title: "{alg1} vs {alg2}"
                 metric2 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg2), 'metric_value'].item()
                 if datasets[dataset_name]["type"] == types[i]:
                     content += f'''
-<div class="w-full text-center text-3xl">
-<h2>{types[i]}</h2>
-</div>
 <div class="flex flex-row">
 <div class="basis-1/2 text-center">
 <img src="/{rel_path}/{os.path.relpath(plot)}">
 </div>
 <div class="basis-1/2 text-center">
-<h2 class="text-4xl mb-2"><span class="text-[#0099cc]">{dataset_name.replace("_", "").capitalize()}</span> dataset</h2>
+<h2 class="text-4xl mb-2 mt-2"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
 <div class="mx-8 text-left">
 <p><b>Metric:</b> {datasets[dataset_name]["metric"]}</p>
 <p><b>{alg1}</b> {round(float(metric1),5)} - vs - {round(float(metric2),5)} <b>{alg2}</b></p>
@@ -334,6 +356,7 @@ title: "{alg1} vs {alg2}"
 </div>
 </div>
 </div>
+<hr>
     '''
         content += '''</section>'''
 
@@ -343,8 +366,9 @@ title: "{alg1} vs {alg2}"
     json_desc.close()
     json_ref.close()
     json_license.close()
-    json_score.close()
+    json_datasets.close()
     md_file.close()
+    del df
     
 
 # generate_models()

@@ -1,7 +1,33 @@
 dataset,dataset_type,name,eval_metric,metric_value
+Abalone,reg,Baseline,rmse,3.2255700443161515
+Abalone,reg,CatBoost,rmse,2.156191703398385
+Abalone,reg,Decision Tree,rmse,2.4721702423034375
+Abalone,reg,Extra Trees,rmse,2.539860003653968
 Abalone,reg,LightGBM,rmse,2.188921040647052
+Abalone,reg,Neural Network,rmse,2.2593722308576623
 Abalone,reg,Random Forest,rmse,2.4665567174957705
 Abalone,reg,Xgboost,rmse,2.2046711475170864
+Adult,binary,Baseline,accuracy,0.7607182343065395
+Adult,binary,CatBoost,accuracy,0.874329470537652
+Adult,binary,Decision Tree,accuracy,0.8451742352893002
+Adult,binary,Extra Trees,accuracy,0.8501085131648991
 Adult,binary,LightGBM,accuracy,0.8761107243765611
+Adult,binary,Neural Network,accuracy,0.8521354571884853
 Adult,binary,Random Forest,accuracy,0.8579296507104541
 Adult,binary,Xgboost,accuracy,0.8758240858277712
+Car,multi,Baseline,accuracy,0.7002314814814815
+Car,multi,CatBoost,accuracy,0.9837962962962963
+Car,multi,Decision Tree,accuracy,0.8211805555555556
+Car,multi,Extra Trees,accuracy,0.9369212962962963
+Car,multi,LightGBM,accuracy,0.9988425925925926
+Car,multi,Neural Network,accuracy,0.9890046296296297
+Car,multi,Random Forest,accuracy,0.9386574074074074
+Car,multi,Xgboost,accuracy,0.9959490740740741
+Apsfailure,binary,Baseline,accuracy,0.9819078947368421
+Apsfailure,binary,CatBoost,accuracy,0.9946578947368421
+Apsfailure,binary,Decision Tree,accuracy,0.9889342105263158
+Apsfailure,binary,Extra Trees,accuracy,0.9910526315789474
+Apsfailure,binary,LightGBM,accuracy,0.9949736842105263
+Apsfailure,binary,Neural Network,accuracy,0.9888421052631579
+Apsfailure,binary,Random Forest,accuracy,0.9901973684210527
+Apsfailure,binary,Xgboost,accuracy,0.9948684210526316
