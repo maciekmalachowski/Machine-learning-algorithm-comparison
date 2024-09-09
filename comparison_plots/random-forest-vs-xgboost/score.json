@@ -1,0 +1,1 @@
+{"random-forest": {"binary": 0, "multi": 0, "reg": 1}, "xgboost": {"binary": 1, "multi": 0, "reg": 0}, "win": "random-forest"}

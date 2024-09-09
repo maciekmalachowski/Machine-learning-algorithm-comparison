@@ -1,0 +1,421 @@
+{
+    "adult":
+    {
+        "type": "Binary classification",
+        "desc": "This is Abalone data. Predicting the age of abalone from physical measurements. The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope. There are other, easier to obtain measurements to predict the age. Further information can be used, such as weather patterns and location (hence food availability).",
+        "metric": "Accuracy",
+        "category": "People",
+        "rows": "48,842",
+        "cols": "14"
+    },
+
+    "apsfailure":
+    {
+        "type": "Binary classification",
+        "desc": "This is an APS Failure at Scania Trucks. The dataset consists of data collected from heavy Scania trucks in everyday usage. The system in focus is the Air Pressure system (APS), which generates pressurized air utilized in various functions in a truck, such as braking and gear changes. The datasets' positive class consists of component failures for a specific component of the APS system. The negative class consists of trucks with failures for components not related to the APS.",
+        "metric": "Accuracy",
+        "category": "Manufacturing",
+        "rows": "76,000",
+        "cols": "170"
+    },
+
+    "internet_advertisements":
+    {
+        "type": "Binary classification",
+        "desc": "This dataset represents a set of possible advertisements on Internet pages. The features encode the image's geometry (if available) as well as phrases occurring in the URL, the image's URL and alt text, the anchor text, and words occurring near the anchor text. The task is to predict whether an image is an advertisement ('ad') or not ('nonad').",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "3,279",
+        "cols": "1,558"
+    },
+
+    "kddcup09_churn":
+    {
+        "type": "Binary classification",
+        "desc": "This is a KDDCup09_churn database. The KDD Cup 2009 offers the opportunity to work on large marketing databases from the French Telecom company Orange to predict customers' propensity to switch providers (churn). Churn is one of two primary factors that determine the steady-state level of customers a business will support. In its broadest sense, the churn rate is a measure of the number of individuals or items moving into or out of a collection over a specific period of time.",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "50,000",
+        "cols": "230"
+    },
+
+    "kddcup09_upselling":
+    {
+        "type": "Binary classification",
+        "desc": "This is a KDDCup09_upselling database. Customer Relationship Management (CRM) is a key element of modern marketing strategies. The KDD Cup 2009 offers the opportunity to work on large marketing databases from the French Telecom company Orange to predict the propensity of customers to switch provider (churn), buy new products or services (appetency), or buy upgrades or add-ons proposed to them to make the sale more profitable (up-selling).",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "50,000",
+        "cols": "230"
+    },
+
+    "amazon_employee_access":
+    {
+        "type": "Binary classification",
+        "desc": "This is an Amazon_employee_access database. The data consists of real historical data collected from 2010 & 2011. Employees are manually allowed or denied access to resources over time. The data is used to create an algorithm capable of learning from this historical data to predict approval/denial for employees' unseen set. There is a considerable amount of data regarding an employee’s role within an organization and the resources to which they have access. Given the data related to current employees and their provisioned access, models can be built that automatically determine access privileges as employees enter and leave roles within a company. These auto-access models seek to minimize the human involvement required to grant or revoke employee access.",
+        "metric": "Accuracy",
+        "category": "Technology",
+        "rows": "32,769",
+        "cols": "9"
+    },
+
+    "bank_marketing":
+    {
+        "type": "Binary classification",
+        "desc": "The Bank Marketing Dataset. The data is related to direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. More than one contact to the same client was often required to access if the product (bank term deposit) would be (or not) subscribed.",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "45,211",
+        "cols": "16"
+    },
+
+    "banknote_authentication":
+    {
+        "type": "Binary classification",
+        "desc": "This is a banknote-authentication. Dataset about distinguishing genuine and forged banknotes. Data were extracted from images that were taken from genuine and forged banknote-like specimens. For digitization, an industrial camera usually used for print inspection was used.",
+        "metric": "Accuracy",
+        "category": "Fintech",
+        "rows": "1,372",
+        "cols": "4"
+    },
+
+    "bioresponse":
+    {
+        "type": "Binary classification",
+        "desc": "This is a Bioresponse database. Predict a biological response of molecules from their chemical properties. The first column contains experimental data describing an actual biological response; the molecule was seen to elicit this response (1) or not (0). The remaining columns represent molecular descriptors (d1 through d1776); these are calculated properties that can capture some of the molecule's characteristics - for example, size, shape, or elemental constitution. The descriptor matrix has been normalized.",
+        "metric": "Accuracy",
+        "category": "Technology",
+        "rows": "3,751",
+        "cols": "1,776"
+    },
+
+    "churn":
+    {
+        "type": "Binary classification",
+        "desc": "This is a churn dataset. A dataset relating characteristics of telephony account features and usage and whether or not the customer churned.",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "5,000",
+        "cols": "20"
+    },
+
+    "click_prediction_small":
+    {
+        "type": "Binary classification",
+        "desc": "This is a Click_prediction_small database. This data is derived from the 2012 KDD Cup. The data is about advertisements shown alongside search results in a search engine and whether or not people clicked on these ads. A search session contains information on user id, the user's query, ads displayed to the user, and the target feature indicating whether a user clicked at least one of the ads in this session.",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "39,948",
+        "cols": "11"
+    },
+
+    "credit_approval":
+    {
+        "type": "Binary classification",
+        "desc": "This is a credit-approval dataset. This file concerns credit card applications. All attribute names and values have been changed to meaningless symbols to protect the confidentiality of the data.",
+        "metric": "Accuracy",
+        "category": "Banking",
+        "rows": "690",
+        "cols": "15"
+    },
+
+    "credit_g":
+    {
+        "type": "Binary classification",
+        "desc": "This is a German Credit dataset. It classifies people described by a set of attributes as good or bad credit risks. This dataset contains such information as a type of job, age, credit history.",
+        "metric": "Accuracy",
+        "category": "Banking",
+        "rows": "1000",
+        "cols": "20"
+    },
+
+    "diabetes":
+    {
+        "type": "Binary classification",
+        "desc": "This is a Pima Indians Diabetes Database. According to World Health Organization criteria, the diagnostic, binary-valued variable investigated is whether the patient shows signs of diabetes.",
+        "metric": "Accuracy",
+        "category": "Healthcare",
+        "rows": "768",
+        "cols": "8"
+    },
+
+    "electricity":
+    {
+        "type": "Binary classification",
+        "desc": "This is an Electricity dataset. This data was collected from the Australian New South Wales Electricity Market. In this market, prices are not fixed and are affected by the market's demand and supply. They are set every five minutes. Electricity transfers to/from the neighboring state of Victoria were done to alleviate fluctuations.",
+        "metric": "Accuracy",
+        "category": "Energy",
+        "rows": "45,312",
+        "cols": "8"
+    },
+    
+    "higgs":
+    {
+        "type": "Binary classification",
+        "desc": "This is a Higgs database. Higgs Boson detection data. The data has been produced using Monte Carlo simulations.",
+        "metric": "Accuracy",
+        "category": "Science",
+        "rows": "98,050",
+        "cols": "28"
+    },
+
+    "phishing_websites":
+    {
+        "type": "Binary classification",
+        "desc": "This is the Phishing Websites Data. There's plenty of articles about predicting phishing websites have been disseminated these days; no reliable training dataset has been published publically, maybe because there is no agreement in the literature on the definitive features that characterize phishing webpages. Hence it is difficult to shape a dataset that covers all possible features. In this dataset, the authors shed light on the important features that have proved to be sound and effective in predicting phishing websites.",
+        "metric": "Accuracy",
+        "category": "Web",
+        "rows": "11,055",
+        "cols": "30"
+    },
+
+    "spambase":
+    {
+        "type": "Binary classification",
+        "desc": "This is a SPAM E-mail Database. This collection of spam e-mails came from postmasters and individuals who had filed spam. Collection of non-spam e-mails came from filed work and personal e-mails, and hence the word 'george' and the area code '650' are indicators of non-spam. These are useful when constructing a personalized spam filter. One would either have to blind such non-spam indicators or get an extensive collection of non-spam to generate a general-purpose spam filter.",
+        "metric": "Accuracy",
+        "category": "Technology",
+        "rows": "4,601",
+        "cols": "57"
+    },
+
+    "wdbc":
+    {
+        "type": "Binary classification",
+        "desc": "This is a WDBC dataset (Wisconsin Diagnostic Brest Cancer). Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe the characteristics of the cell nuclei present in the image.",
+        "metric": "Accuracy",
+        "category": "Healthcare",
+        "rows": "569",
+        "cols": "30"
+    },
+
+    "amazon_commerce_reviews":
+    {
+        "type": "Multiclass classification",
+        "desc": "This is an amazon-commerce-reviews. Datasets are derived from the customer's reviews on Amazon Commerce Website for authorship identification. Most previous studies conducted identification experiments for two to ten authors. But in the online context, reviews to be identified usually have more potential authors, and normally classification algorithms are not adapted to a large number of target classes. To examine the robustness of classification algorithms, the authors of this database identify 50 of the most active users (represented by a unique ID and username) who frequently posted reviews in these newsgroups. The number of reviews we collected for each user is 30.",
+        "metric": "Accuracy",
+        "category": "Marketing",
+        "rows": "1,500",
+        "cols": "10,000"
+    },
+
+    "car":
+    {
+        "type": "Multiclass classification",
+        "desc": "The Car Evaluation Database contains examples with the structural information removed, i.e., directly relates CAR to the six input attributes: buying, maint, doors, persons, lug_boot, safety. Because of known underlying concept structure, this database may be particularly useful for testing constructive induction and structure discovery methods.",
+        "metric": "Accuracy",
+        "category": "Automotive",
+        "rows": "1,728",
+        "cols": "6"
+    },
+
+    "cnae_9":
+    {
+        "type": "Multiclass classification",
+        "desc": "This is a cnae-9 database. It is a data set containing 1080 documents of free text business descriptions of Brazilian companies categorized into a subset of 9 categories. The original texts were preprocessed to obtain the current data set: initially, it was kept only letters, and then was removed prepositions of the texts. Next, the words were transformed into their canonical form. Finally, each document was represented as a vector, where the weight of each word is its frequency in the document. This data set is highly sparse.",
+        "metric": "Accuracy",
+        "category": "Business",
+        "rows": "1,080",
+        "cols": "856"
+    },
+
+    "connect_4":
+    {
+        "type": "Multiclass classification",
+        "desc": "This database contains all legal 8-ply positions in the game of connect-4 in which neither player has won yet, and in which the next move is not forced. Attributes represent board positions on a 6x6 board. The outcome class is the game-theoretical value for the first player (2: win, 1: loss, 0: draw).",
+        "metric": "Accuracy",
+        "category": "Gaming",
+        "rows": "45,312",
+        "cols": "8"
+    },
+
+    "mfeat_factors":
+    {
+        "type": "Multiclass classification",
+        "desc": "One of a set of 6 datasets describing features of handwritten numerals (0 - 9) extracted from a collection of Dutch utility maps. Corresponding patterns in different datasets correspond to the same original character. 200 instances per class (for a total of 2,000 instances) have been digitized in binary images.",
+        "metric": "Accuracy",
+        "category": "Technology",
+        "rows": "2,000",
+        "cols": "216"
+    },
+
+    "segment":
+    {
+        "type": "Multiclass classification",
+        "desc": "The instances were drawn randomly from a database of 7 outdoor images. The images were hand-segmented to create a classification for every pixel. Each instance is a 3x3 region.",
+        "metric": "Accuracy",
+        "category": "Technology",
+        "rows": "2,310",
+        "cols": "19"
+    },
+
+    "vehicle":
+    {
+        "type": "Multiclass classification",
+        "desc": "The vehicle silhouettes - purpose to classify a given silhouette as one of four types of vehicle, using a set of features extracted from the silhouette. The vehicle may be viewed from one of many different angles.",
+        "metric": "Accuracy",
+        "category": "Automotive",
+        "rows": "846",
+        "cols": "18"
+    },
+
+    "airlines_depdelay_1m":
+    {
+        "type": "Regression",
+        "desc": "This is an Airlines Departure Delay Prediction. This is a processed version of the original data, designed to predict departure delay.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Insurance",
+        "rows": "188,318",
+        "cols": "131"
+    },
+
+    "allstate_claims_severity":
+    {
+        "type": "Regression",
+        "desc": "This is an Allstate Claims severity database. This dataset contains insurance claims. Allstate is developing automated methods of predicting the cost, and hence severity, of claims. This dataset was shared on Kaggle to find insight into better ways to predict claims severity.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Energy",
+        "rows": "45,312",
+        "cols": "8"
+    },
+
+    "buzzinsocialmedia_twitter":
+    {
+        "type": "Regression",
+        "desc": "This is a Buzz in the Social Media Twitter database. This data-set contains examples of buzz events from two different social networks: Twitter, and Tom's Hardware, a forum network focusing on new technology with more conservative dynamics.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Social Media",
+        "rows": "583,250",
+        "cols": "77"
+    },
+
+    "moneyball":
+    {
+        "type": "Regression",
+        "desc": "This is the Moneyball database. This dataset contains some of the information that was available to Billy Beane and Paul DePodesta, who worked for the Oakland Athletics in the early 2000s and changed the game of baseball. It can be used to understand their statistical methods better. The database contains such information as team, league, year, runs scored, wins.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Sport",
+        "rows": "1,232",
+        "cols": "14"
+    },
+
+    "onlinenewspopularity":
+    {
+        "type": "Regression",
+        "desc": "This is an Online News Popularity database. This dataset summarizes a heterogeneous set of features about Mashable articles in a period of two years. The goal is to predict the number of shares in social networks (popularity).",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Marketing",
+        "rows": "39,644",
+        "cols": "60"
+    },
+
+    "santander_transaction_value":
+    {
+        "type": "Regression",
+        "desc": "This is a Santander Transaction Value database. It provides an anonymized dataset containing numeric feature variables, the numeric target column, and a string ID column. The Santander Group supplied this database on Kaggle to find a way to identify the value of transactions for each potential customer. This is the first step that Santander needs to nail in order to personalize their services at scale. The digitalization of everyday lives means that customers expect services to be delivered in a personalized and timely manner... and often before they've even realized they need the service.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Technology",
+        "rows": "4,459",
+        "cols": "4,992"
+    },
+
+    "abalone":
+    {
+        "type": "Regression",
+        "desc": "This is Abalone data. Predicting the age of abalone from physical measurements. The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope. There are other, easier to obtain measurements to predict the age. Further information can be used, such as weather patterns and location (hence food availability).",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Animals",
+        "rows": "4,177",
+        "cols": "8"
+    },
+
+    "black_friday":
+    {
+        "type": "Regression",
+        "desc": "This is a Black Friday database. It contains customer purchases on Black Friday and information as age, gender, marital status of consumers.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Retail",
+        "rows": "166,821",
+        "cols": "9"
+    },
+
+    "boston":
+    {
+        "type": "Regression",
+        "desc": "This is the Boston house-price data database. It contains such information as per capita crime rate by town, the proportion of non-retail business acres per town, the average number of rooms per dwelling.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Real Estate",
+        "rows": "506",
+        "cols": "13"
+    },
+
+    "colleges":
+    {
+        "type": "Regression",
+        "desc": "This is the Colleges database. Regroups information for about 7800 different US colleges. Including geographical information, stats about the population attending, and post-graduation career earnings.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "People",
+        "rows": "7,063",
+        "cols": "47"
+    },
+
+    "diamonds":
+    {
+        "type": "Regression",
+        "desc": "This is a Diamonds database. This classic dataset contains the prices and other attributes of almost 54,000 diamonds.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Technology",
+        "rows": "53,940",
+        "cols": "9"
+    },
+
+    "house_sales":
+    {
+        "type": "Regression",
+        "desc": "This is a house_sales database. This dataset contains house sale prices for King County, which includes Seattle. It includes homes sold between May 2014 and May 2015. It contains 19 house features plus the price and the id columns, along with 21613 observations. It's a great dataset for evaluating simple regression models.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Business",
+        "rows": "21,613",
+        "cols": "22"
+    },
+
+    "nyc-taxi-green-dec-2016":
+    {
+        "type": "Regression",
+        "desc": "This is a Trip Record Data database. It is provided by the New York City Taxi and Limousine Commission (TLC). The dataset included TLC trips of the green line in December 2016.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Automotive",
+        "rows": "581,835",
+        "cols": "18"
+    },
+
+    "space_ga":
+    {
+        "type": "Regression",
+        "desc": "This is an Election database. It contains 3,107 observations on county votes cast in the 1980 U.S. presidential election. Specifically, it contains the total number of votes cast in the 1980 presidential election per county (VOTES), the population in each county of 18 years of age or older (POP), the population in each county with a 12th grade or higher education ( EDUCATION), the number of owner-occupied housing units (HOUSES), the aggregate income (INCOME), the X spatial coordinate of the county (XCOORD), and the Y spatial coordinate of the county (YCOORD).",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Public Sector",
+        "rows": "3,107",
+        "cols": "6"
+    },
+
+    "us_crime":
+    {
+        "type": "Regression",
+        "desc": "This is a Communities and Crime database. Communities within the United States. The data combines socio-economic data from the 1990 US Census, law enforcement data from the 1990 US LEMAS survey, and crime data from the 1995 FBI UCR.",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "People",
+        "rows": "1,994",
+        "cols": "127"
+    },
+
+    "wine_quality":
+    {
+        "type": "Regression",
+        "desc": "This is a Wine Quality database. Datasets are related to red and white. This is a Wine Quality database. Datasets are related to red and white variants of the Portuguese 'Vinho Verde' wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g., there is no data about grape types, wine brand, wine selling price, etc.). The inputs include objective tests (e.g., PH values), and the output is based on sensory data (median of at least 3 evaluations made by wine experts). Each expert graded the wine quality between 0 (very bad) and 10 (very excellent).",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Retail",
+        "rows": "6,497",
+        "cols": "11"
+    }
+}

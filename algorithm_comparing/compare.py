@@ -139,8 +139,6 @@ def compare():
     datasets = df['dataset'].unique()
     algorithms = df['name'].unique()
     used_combos = []
-    full_path = ""
-    relative_path = ""
 
     for alg1 in algorithms:
         for alg2 in algorithms:
@@ -233,11 +231,14 @@ def generate_md(path, rel_path, alg1, alg2):
     json_desc = open(f"algorithms_info/algorithms_desc.json", "r")
     json_license = open(f"algorithms_info/algorithms_license.json", "r")
     json_ref = open(f"algorithms_info/algorithms_ref.json", "r")
+    json_datasets = open(f"algorithms_info/datasets_info.json", "r")
+    df = pd.read_csv("algorithms_info/algorithm_leaderboard.csv")
 
     score = json.load(json_score)
     desc = json.load(json_desc)
     license = json.load(json_license)
     reference = json.load(json_ref)
+    datasets = json.load(json_datasets)
 
     os.makedirs('markdowns', exist_ok=True) 
     md_file = open(f"C:/Users/Maciek/website-mljar/src/content/machine-learning/{name1}-vs-{name2}.md", "w")
@@ -299,26 +300,42 @@ title: "{alg1} vs {alg2}"
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["reg"]}:{score[name2]["reg"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
 </div>
 <div class="basis-1/2">
-<img src='/machine-learning/compete.svg' class="not-prose w-96 mx-auto">
+<img src='/machine-learning/compete.svg' class="not-prose w-60 mx-auto">
 <img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-96 mx-auto">
 </div>
 </div>
 
 <hr>
 '''
-    for plot in os.listdir(path):
-        if (plot.endswith(".png")):
-            content += f'''
+    types = ["Binary classification", "Multiclass classification", "Regression"]
+    for i in range(3):
+        for plot in os.listdir(path):
+            if (plot.endswith(".png")):
+                dataset_name = os.path.relpath(plot).replace(f"_{name1}-vs-{name2}.png", "")
+                metric1 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg1), 'metric_value'].item()
+                metric2 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg2), 'metric_value'].item()
+                if datasets[dataset_name]["type"] == types[i]:
+                    content += f'''
+<div class="w-full text-center text-3xl">
+<h2>{types[i]}</h2>
+</div>
 <div class="flex flex-row">
 <div class="basis-1/2 text-center">
 <img src="/{rel_path}/{os.path.relpath(plot)}">
 </div>
 <div class="basis-1/2 text-center">
-<h2 class="text-4xl mb-2">tutaj bedzie nazwa datasetu</h2>
+<h2 class="text-4xl mb-2"><span class="text-[#0099cc]">{dataset_name.replace("_", "").capitalize()}</span> dataset</h2>
+<div class="mx-8 text-left">
+<p><b>Metric:</b> {datasets[dataset_name]["metric"]}</p>
+<p><b>{alg1}</b> {round(float(metric1),5)} - vs - {round(float(metric2),5)} <b>{alg2}</b></p>
+<p classs="text-pretty">{datasets[dataset_name]["desc"]}</p>
+<p><b>Category:</b> {datasets[dataset_name]["category"]}</p>
+<p><b>Rows:</b> {datasets[dataset_name]["rows"]} <b>Cols:</b> {datasets[dataset_name]["cols"]}</p> 
 </div>
 </div>
-</section>
+</div>
     '''
+        content += '''</section>'''
 
     md_file.write(content)
 
@@ -332,7 +349,6 @@ title: "{alg1} vs {alg2}"
 
 # generate_models()
 compare()
-# generate_md("C:/Users/Maciek/website-mljar/public/machine-learning/lightgbm-vs-xgboost", "XGBoost", "LightGBM")
 
 
 

@@ -1,0 +1,1 @@
+{"lightgbm": {"binary": 1, "multi": 0, "reg": 0}, "xgboost": {"binary": 0, "multi": 0, "reg": 1}, "win": "xgboost"}
