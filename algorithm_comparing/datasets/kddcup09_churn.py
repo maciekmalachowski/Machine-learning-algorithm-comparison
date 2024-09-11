@@ -2,7 +2,7 @@ from sklearn.datasets import fetch_openml
 
 def get_data():
     # read data from openml page
-    name = "KDDCup09_churn"
+    name = "Kddcup09_churn"
     dataset_type = "binary"
     data = fetch_openml(data_id=1112, as_frame=True)
     X = data.data

@@ -1,1 +1,1 @@
-{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "catboost": {"binary": 2, "multi": 1, "reg": 1}, "win": "catboost"}
+{"baseline": {"binary": 0, "multi": 0, "reg": 1}, "catboost": {"binary": 5, "multi": 4, "reg": 4}, "win": "catboost"}

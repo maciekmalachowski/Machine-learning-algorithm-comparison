@@ -1,1 +1,1 @@
-{"decision-tree": {"binary": 1, "multi": 0, "reg": 0}, "neural-network": {"binary": 1, "multi": 1, "reg": 1}, "win": "neural-network"}
+{"decision-tree": {"binary": 1, "multi": 0, "reg": 3}, "neural-network": {"binary": 4, "multi": 4, "reg": 2}, "win": "neural-network"}

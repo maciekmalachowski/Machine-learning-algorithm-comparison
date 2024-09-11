@@ -2,7 +2,7 @@ from sklearn.datasets import fetch_openml
 
 def get_data():
     # read data from openml page
-    name = "Hibbs"
+    name = "Higgs"
     dataset_type = "binary"
     data = fetch_openml(data_id=23512, as_frame=True)
     X = data.data

@@ -9,20 +9,20 @@ from datasets import abalone, adult, airlines_depdelay_1m,  allstate_claims_seve
 
 def generate_models():
     datasets = [
-        # abalone.get_data(), # nearest_neighbors
-        # adult.get_data(),
-        # airlines_depdelay_1m.get_data(),
+        # abalone.get_data(), #done
+        # adult.get_data(), #done
+        # airlines_depdelay_1m.get_data(), # more time needed
         # allstate_claims_severity.get_data(),
         # amazon_commerce_reviews.get_data(),
         # amazon_employee_access.get_data(),
-        apsfailure.get_data(),
+        # apsfailure.get_data(), #done
         # bank_marketing.get_data(),
         # banknote_authentication.get_data(),
         # bioresponse.get_data(),
         # black_friday.get_data(),
         # boston.get_data(),
-        # buzzinsocialmedia_twitter.get_data(),
-        # car.get_data(),
+        # buzzinsocialmedia_twitter.get_data(), # more time needed
+        # car.get_data(), #done
         # churn.get_data(),
         # click_prediction_small.get_data(),
         # cnae_9.get_data(),
@@ -40,17 +40,17 @@ def generate_models():
         # kddcup09_upselling.get_data(),
         # mfeat_factors.get_data(),
         # moneyball.get_data(),
-        # nyc_taxi_gree_dec2016.get_data(),
-        # onlinenewspopularity.get_data(),
-        # phishing_websites.get_data(),
-        # santander_transaction_volume.get_data(),
-        # segment.get_data(),
-        # space_ga.get_data(),
-        # spambase.get_data(),
-        # us_crime.get_data(),
-        # vehicle.get_data(),
-        # wdbc.get_data(),
-        # wine_quality.get_data()
+        # nyc_taxi_gree_dec2016.get_data(), # more time needed
+        onlinenewspopularity.get_data(), #done
+        phishing_websites.get_data(), #done
+        santander_transaction_volume.get_data(), #done
+        # segment.get_data(), #done
+        # space_ga.get_data(), #done
+        # spambase.get_data(), #done
+        # us_crime.get_data(), #done
+        # vehicle.get_data(), #done
+        # wdbc.get_data(), #done
+        # wine_quality.get_data() #done
     ]
 
     algorithms=[
@@ -87,7 +87,7 @@ def generate_models():
             # create automl object
             automl = AutoML(
                 mode="Compete", 
-                total_time_limit=180, 
+                total_time_limit=300, 
                 results_path=f"AutoML/{data[2]}/{al}", 
                 algorithms=[al], 
                 train_ensemble=False,
@@ -172,7 +172,8 @@ def compare():
                         ax = sns.barplot(plot_df)
                         if df.loc[(df['dataset']==data) & (df['name']==alg1), 'eval_metric'].item() == 'accuracy':
                             if metric1 > metric2:
-                                ax.plot(0, 0.5, "*", markersize=50, color="yellow")
+                                ax.plot(0, metric1/2, "*", markersize=50, color="yellow")
+                                ax.set(ylim=(0, metric1+(metric1/5)))
                                 if df_type=="binary":
                                     score[name1]['binary'] += 1
                                 elif df_type=="multi":
@@ -181,16 +182,22 @@ def compare():
                                     score[name1]['reg'] += 1
 
                             elif metric1 < metric2:
-                                ax.plot(1, 0.5, "*", markersize=50, color="yellow")
+                                ax.plot(1, metric2/2, "*", markersize=50, color="yellow")
+                                ax.set(ylim=(0, metric2+(metric2/5)))
                                 if df_type=="binary":
                                     score[name2]['binary'] += 1
                                 elif df_type=="multi":
                                     score[name2]['multi'] += 1
                                 elif df_type=="reg":
                                     score[name2]['reg'] += 1
+                            
+                            else:
+                                ax.set(ylim=(0, metric1+(metric1/5)))
+
                         else:
                             if metric1 < metric2:
-                                ax.plot(0, 0.5, "*", markersize=50, color="yellow")
+                                ax.plot(0, metric1/2, "*", markersize=50, color="yellow")
+                                ax.set(ylim=(0, metric2+(metric2/5)))
                                 if df_type=="binary":
                                     score[name1]['binary'] += 1
                                 elif df_type=="multi":
@@ -199,7 +206,8 @@ def compare():
                                     score[name1]['reg'] += 1
 
                             elif metric1 > metric2:
-                                ax.plot(1, 0.5, "*", markersize=50, color="yellow")
+                                ax.plot(1, metric2/2, "*", markersize=50, color="yellow")
+                                ax.set(ylim=(0, metric1+(metric1/5)))
                                 if df_type=="binary":
                                     score[name2]['binary'] += 1
                                 elif df_type=="multi":
@@ -207,15 +215,14 @@ def compare():
                                 elif df_type=="reg":
                                     score[name2]['reg'] += 1
 
+                            else:
+                                ax.set(ylim=(0, metric1+(metric1/5)))
+
                         ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
 
                         plt.title(f"{data}")
                         for i in ax.containers:
-                            ax.bar_label(i,)
-                        
-                        if df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0] == 'accuracy':
-                            ax.set(ylim=(0, 1.1))
-                        
+                            ax.bar_label(i,)                           
                         
                         if not os.path.exists(f"comparison_plots/{name1}-vs-{name2}"):
                             os.makedirs(f"comparison_plots/{name1}-vs-{name2}")
@@ -249,16 +256,12 @@ def generate_md(path, rel_path, alg1, alg2):
     name2 = alg2.replace(" ", "-").lower()
 
     json_score = open(f"{path}/score.json", "r")
-    json_desc = open(f"algorithms_info/algorithms_desc.json", "r")
-    json_license = open(f"algorithms_info/algorithms_license.json", "r")
-    json_ref = open(f"algorithms_info/algorithms_ref.json", "r")
+    json_resources = open(f"algorithms_info/algorithms_resources.json", "r")
     json_datasets = open(f"algorithms_info/datasets_info.json", "r")
     df = pd.read_csv("algorithms_info/algorithm_leaderboard.csv")
 
     score = json.load(json_score)
-    desc = json.load(json_desc)
-    license = json.load(json_license)
-    reference = json.load(json_ref)
+    resources = json.load(json_resources)
     datasets = json.load(json_datasets)
 
     md_file = open(f"C:/Users/Maciek/website-mljar/src/content/machine-learning/{name1}-vs-{name2}.md", "w")
@@ -280,31 +283,31 @@ title: "{alg1} vs {alg2}"
 <div class="flex flex-row px-8">
 <div class="basis-1/2 text-justify mr-8">
 <p>
-{desc[name1]}
+{resources[name1]["desc"]}
 </p>
 <p>
 <h2 class='mb-2'>References</h2>
 <ul class='text-left'>
-{reference[name1]}
+{resources[name1]["ref"]}
 </ul>
 </p>
 <p>
 <h2 class='mb-2'>License</h2>
-{license[name1]}
+{resources[name1]["license"]}
 </p>
 </div>
 <div class="basis-1/2 text-justify ml-8">
 <p>
-{desc[name2]}
+{resources[name2]["desc"]}
 </p>
 <h2 class='mb-2'>References</h2>
 <ul class='text-left'>
-{reference[name2]}
+{resources[name2]["ref"]}
 </ul>
 </p>
 <p>
 <h2 class='mb-2'>License</h2>
-{license[name2]}
+{resources[name2]["license"]}
 </p>
 </div>
 </div>
@@ -352,7 +355,7 @@ title: "{alg1} vs {alg2}"
 <p><b>{alg1}</b> {round(float(metric1),5)} - vs - {round(float(metric2),5)} <b>{alg2}</b></p>
 <p classs="text-pretty">{datasets[dataset_name]["desc"]}</p>
 <p><b>Category:</b> {datasets[dataset_name]["category"]}</p>
-<p><b>Rows:</b> {datasets[dataset_name]["rows"]} <b>Cols:</b> {datasets[dataset_name]["cols"]}</p> 
+<p><b>Rows:</b> {datasets[dataset_name]["rows"]} <b>Columns:</b> {datasets[dataset_name]["cols"]}</p> 
 </div>
 </div>
 </div>
@@ -363,9 +366,7 @@ title: "{alg1} vs {alg2}"
     md_file.write(content)
 
     json_score.close()
-    json_desc.close()
-    json_ref.close()
-    json_license.close()
+    json_resources.close()
     json_datasets.close()
     md_file.close()
     del df
