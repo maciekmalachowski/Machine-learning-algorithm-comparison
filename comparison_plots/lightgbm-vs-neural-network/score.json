@@ -1,1 +1,1 @@
-{"lightgbm": {"binary": 5, "multi": 3, "reg": 4}, "neural-network": {"binary": 0, "multi": 1, "reg": 1}, "win": "lightgbm"}
+{"lightgbm": {"binary": 10, "multi": 4, "reg": 6}, "neural-network": {"binary": 0, "multi": 1, "reg": 1}, "win": "lightgbm"}

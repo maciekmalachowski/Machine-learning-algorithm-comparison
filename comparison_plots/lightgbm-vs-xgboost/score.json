@@ -1,1 +1,1 @@
-{"lightgbm": {"binary": 4, "multi": 3, "reg": 4}, "xgboost": {"binary": 1, "multi": 1, "reg": 1}, "win": "lightgbm"}
+{"lightgbm": {"binary": 7, "multi": 4, "reg": 5}, "xgboost": {"binary": 3, "multi": 1, "reg": 2}, "win": "lightgbm"}

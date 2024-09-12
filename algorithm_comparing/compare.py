@@ -32,18 +32,18 @@ def generate_models():
         # credit_g.get_data(),
         # diabetes.get_data(),
         # diamonds.get_data(),
-        # electricity.get_data(),
-        # higgs.get_data(),
-        # house_sales.get_data(),
-        # internet_advertisement.get_data(),
-        # kddcup09_churn.get_data(),
-        # kddcup09_upselling.get_data(),
-        # mfeat_factors.get_data(),
-        # moneyball.get_data(),
-        # nyc_taxi_gree_dec2016.get_data(), # more time needed
-        onlinenewspopularity.get_data(), #done
-        phishing_websites.get_data(), #done
-        santander_transaction_volume.get_data(), #done
+        # electricity.get_data(), #done
+        # higgs.get_data(), #done
+        # house_sales.get_data(), #done
+        # internet_advertisement.get_data(), #done
+        kddcup09_churn.get_data(),
+        # kddcup09_upselling.get_data(), #done
+        # mfeat_factors.get_data(), #done
+        # moneyball.get_data(), #done
+        # nyc_taxi_gree_dec2016.get_data(), # more time needed 
+        # onlinenewspopularity.get_data(), #done
+        # phishing_websites.get_data(), #done
+        # santander_transaction_volume.get_data(), #done
         # segment.get_data(), #done
         # space_ga.get_data(), #done
         # spambase.get_data(), #done
@@ -268,10 +268,11 @@ def generate_md(path, rel_path, alg1, alg2):
 
     content = f'''---
 title: "{alg1} vs {alg2}"
+description: Comparison of {alg1} and {alg2} with examples on different datasets.
 ---
 
 <section>
-<div class="flex flex-row">
+<div class="flex-col sm:flex-row hidden sm:flex bg-slate-50 rounded-lg">
 <div class="basis-1/2 place-self-center">
 <img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto">
 </div>
@@ -280,8 +281,9 @@ title: "{alg1} vs {alg2}"
 </div>
 </div>
 
-<div class="flex flex-row px-8">
-<div class="basis-1/2 text-justify mr-8">
+<div class="flex flex-col sm:flex-row px-8">
+<div class="basis-1/2 text-justify sm:mr-8 mb-8 sm:mb-0">
+<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-gray-600 rounded-lg">
 <p>
 {resources[name1]["desc"]}
 </p>
@@ -296,7 +298,9 @@ title: "{alg1} vs {alg2}"
 {resources[name1]["license"]}
 </p>
 </div>
-<div class="basis-1/2 text-justify ml-8">
+
+<div class="basis-1/2 text-justify sm:ml-8">
+<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-gray-600 rounded-lg">
 <p>
 {resources[name2]["desc"]}
 </p>
@@ -313,7 +317,7 @@ title: "{alg1} vs {alg2}"
 </div>
 
 <hr>
-<div class="flex flex-row">
+<div class="flex flex-col sm:flex-row">
 <div class="basis-1/2 text-center">
 <h2 class="text-4xl mb-2 mt-2">Binary classification</h2>
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["binary"]}:{score[name2]["binary"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
@@ -322,19 +326,19 @@ title: "{alg1} vs {alg2}"
 <h2 class="text-4xl mb-2">Regression</h2>
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["reg"]}:{score[name2]["reg"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
 </div>
-<div class="basis-1/2">
-<img src='/machine-learning/compete.svg' class="not-prose w-60 mx-auto">
-<img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-96 mx-auto">
+<div class="basis-1/2 bg-slate-50 rounded-lg">
+<img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-96 mx-auto mb-2">
+<img src='/machine-learning/compete.svg' class="not-prose w-64 mx-auto">
 </div>
 </div>
 
 <hr>
 '''
     types = ["Binary classification", "Multiclass classification", "Regression"]
-    for i in range(3):
+    for type in types:
         content += f'''
 <div class="w-full text-center text-3xl">
-<h2>{types[i]}</h2>
+<h2>{type}</h2>
 </div>
 '''
         for plot in os.listdir(path):
@@ -342,9 +346,9 @@ title: "{alg1} vs {alg2}"
                 dataset_name = os.path.relpath(plot).replace(f"_{name1}-vs-{name2}.png", "")
                 metric1 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg1), 'metric_value'].item()
                 metric2 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg2), 'metric_value'].item()
-                if datasets[dataset_name]["type"] == types[i]:
+                if datasets[dataset_name]["type"] == type:
                     content += f'''
-<div class="flex flex-row">
+<div class="flex flex-col sm:flex-row">
 <div class="basis-1/2 text-center">
 <img src="/{rel_path}/{os.path.relpath(plot)}">
 </div>
@@ -352,7 +356,7 @@ title: "{alg1} vs {alg2}"
 <h2 class="text-4xl mb-2 mt-2"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
 <div class="mx-8 text-left">
 <p><b>Metric:</b> {datasets[dataset_name]["metric"]}</p>
-<p><b>{alg1}</b> {round(float(metric1),5)} - vs - {round(float(metric2),5)} <b>{alg2}</b></p>
+<p><b>{alg1}</b> {round(float(metric1),5):,} - vs - {round(float(metric2),5):,} <b>{alg2}</b></p>
 <p classs="text-pretty">{datasets[dataset_name]["desc"]}</p>
 <p><b>Category:</b> {datasets[dataset_name]["category"]}</p>
 <p><b>Rows:</b> {datasets[dataset_name]["rows"]} <b>Columns:</b> {datasets[dataset_name]["cols"]}</p> 
