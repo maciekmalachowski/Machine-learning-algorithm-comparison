@@ -6,7 +6,8 @@
         "metric": "Accuracy",
         "category": "People",
         "rows": "48,842",
-        "cols": "14"
+        "cols": "14",
+        "link": "https://openml.org/d/1590"
     },
 
     "aps_failure":
@@ -16,7 +17,8 @@
         "metric": "Accuracy",
         "category": "Manufacturing",
         "rows": "76,000",
-        "cols": "170"
+        "cols": "170",
+        "link": "https://openml.org/d/41138"
     },
 
     "internet_advertisements":
@@ -26,7 +28,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "3,279",
-        "cols": "1,558"
+        "cols": "1,558",
+        "link": "https://openml.org/d/40978"
     },
 
     "kddcup09_churn":
@@ -36,7 +39,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "50,000",
-        "cols": "230"
+        "cols": "230",
+        "link": "https://openml.org/d/1112"
     },
 
     "kddcup09_upselling":
@@ -46,7 +50,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "50,000",
-        "cols": "230"
+        "cols": "230",
+        "link": "https://openml.org/d/1114"
     },
 
     "amazon_employee_access":
@@ -56,7 +61,8 @@
         "metric": "Accuracy",
         "category": "Technology",
         "rows": "32,769",
-        "cols": "9"
+        "cols": "9",
+        "link": "https://openml.org/d/4135"
     },
 
     "bank_marketing":
@@ -66,7 +72,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "45,211",
-        "cols": "16"
+        "cols": "16",
+        "link": "https://openml.org/d/1461"
     },
 
     "banknote_authentication":
@@ -76,7 +83,8 @@
         "metric": "Accuracy",
         "category": "Fintech",
         "rows": "1,372",
-        "cols": "4"
+        "cols": "4",
+        "link": "https://openml.org/d/1462"
     },
 
     "bioresponse":
@@ -86,7 +94,8 @@
         "metric": "Accuracy",
         "category": "Technology",
         "rows": "3,751",
-        "cols": "1,776"
+        "cols": "1,776",
+        "link": "https://openml.org/d/4134"
     },
 
     "churn":
@@ -96,7 +105,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "5,000",
-        "cols": "20"
+        "cols": "20",
+        "link": "https://openml.org/d/40701"
     },
 
     "click_prediction_small":
@@ -106,7 +116,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "39,948",
-        "cols": "11"
+        "cols": "11",
+        "link": "https://openml.org/d/1220"
     },
 
     "credit_approval":
@@ -116,7 +127,8 @@
         "metric": "Accuracy",
         "category": "Banking",
         "rows": "690",
-        "cols": "15"
+        "cols": "15",
+        "link": "https://openml.org/d/29"
     },
 
     "credit_g":
@@ -126,7 +138,8 @@
         "metric": "Accuracy",
         "category": "Banking",
         "rows": "1000",
-        "cols": "20"
+        "cols": "20",
+        "link": "https://openml.org/d/31"
     },
 
     "diabetes":
@@ -136,7 +149,8 @@
         "metric": "Accuracy",
         "category": "Healthcare",
         "rows": "768",
-        "cols": "8"
+        "cols": "8",
+        "link": "https://openml.org/d/37"
     },
 
     "electricity":
@@ -146,7 +160,8 @@
         "metric": "Accuracy",
         "category": "Energy",
         "rows": "45,312",
-        "cols": "8"
+        "cols": "8",
+        "link": "https://openml.org/d/151"
     },
     
     "higgs":
@@ -156,7 +171,8 @@
         "metric": "Accuracy",
         "category": "Science",
         "rows": "98,050",
-        "cols": "28"
+        "cols": "28",
+        "link": "https://openml.org/d/23512"
     },
 
     "phishing_websites":
@@ -166,7 +182,8 @@
         "metric": "Accuracy",
         "category": "Web",
         "rows": "11,055",
-        "cols": "30"
+        "cols": "30",
+        "link": "https://openml.org/d/4534"
     },
 
     "spambase":
@@ -176,7 +193,8 @@
         "metric": "Accuracy",
         "category": "Technology",
         "rows": "4,601",
-        "cols": "57"
+        "cols": "57",
+        "link": "https://openml.org/d/44"
     },
 
     "wdbc":
@@ -186,7 +204,8 @@
         "metric": "Accuracy",
         "category": "Healthcare",
         "rows": "569",
-        "cols": "30"
+        "cols": "30",
+        "link": "https://openml.org/d/1510"
     },
 
     "amazon_commerce_reviews":
@@ -196,7 +215,8 @@
         "metric": "Accuracy",
         "category": "Marketing",
         "rows": "1,500",
-        "cols": "10,000"
+        "cols": "10,000",
+        "link": "https://openml.org/d/1457"
     },
 
     "car":
@@ -206,7 +226,8 @@
         "metric": "Accuracy",
         "category": "Automotive",
         "rows": "1,728",
-        "cols": "6"
+        "cols": "6",
+        "link": "https://openml.org/d/40975"
     },
 
     "cnae_9":
@@ -216,7 +237,8 @@
         "metric": "Accuracy",
         "category": "Business",
         "rows": "1,080",
-        "cols": "856"
+        "cols": "856",
+        "link": "https://openml.org/d/1468"
     },
 
     "connect_4":
@@ -226,7 +248,8 @@
         "metric": "Accuracy",
         "category": "Gaming",
         "rows": "45,312",
-        "cols": "8"
+        "cols": "8",
+        "link": "https://openml.org/d/40668"
     },
 
     "mfeat_factors":
@@ -236,7 +259,8 @@
         "metric": "Accuracy",
         "category": "Technology",
         "rows": "2,000",
-        "cols": "216"
+        "cols": "216",
+        "link": "https://openml.org/d/12"
     },
 
     "segment":
@@ -246,7 +270,8 @@
         "metric": "Accuracy",
         "category": "Technology",
         "rows": "2,310",
-        "cols": "19"
+        "cols": "19",
+        "link": "https://openml.org/d/40984"
     },
 
     "vehicle":
@@ -256,7 +281,8 @@
         "metric": "Accuracy",
         "category": "Automotive",
         "rows": "846",
-        "cols": "18"
+        "cols": "18",
+        "link": "https://openml.org/d/54"
     },
 
     "wine_quality":
@@ -266,7 +292,8 @@
         "metric": "Accuracy",
         "category": "Retail",
         "rows": "6,497",
-        "cols": "11"
+        "cols": "11",
+        "link": "https://openml.org/d/287"
     },
 
     "airlines_depdelay_1m":
@@ -276,7 +303,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Insurance",
         "rows": "188,318",
-        "cols": "131"
+        "cols": "131",
+        "link": "https://openml.org/d/42721"
     },
 
     "allstate_claims_severity":
@@ -286,7 +314,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Energy",
         "rows": "45,312",
-        "cols": "8"
+        "cols": "8",
+        "link": "https://openml.org/d/42571"
     },
 
     "buzzinsocialmedia_twitter":
@@ -296,7 +325,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Social Media",
         "rows": "583,250",
-        "cols": "77"
+        "cols": "77",
+        "link": "https://openml.org/d/4549"
     },
 
     "moneyball":
@@ -306,7 +336,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Sport",
         "rows": "1,232",
-        "cols": "14"
+        "cols": "14",
+        "link": "https://openml.org/d/41021"
     },
 
     "online_news_popularity":
@@ -316,7 +347,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Marketing",
         "rows": "39,644",
-        "cols": "60"
+        "cols": "60",
+        "link": "https://openml.org/d/42724"
     },
 
     "santander_transaction_value":
@@ -326,7 +358,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Technology",
         "rows": "4,459",
-        "cols": "4,992"
+        "cols": "4,992",
+        "link": "https://openml.org/d/42572"
     },
 
     "abalone":
@@ -336,7 +369,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Animals",
         "rows": "4,177",
-        "cols": "8"
+        "cols": "8",
+        "link": "https://openml.org/d/42726"
     },
 
     "black_friday":
@@ -346,7 +380,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Retail",
         "rows": "166,821",
-        "cols": "9"
+        "cols": "9",
+        "link": "https://openml.org/d/41540"
     },
 
     "boston":
@@ -356,7 +391,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Real Estate",
         "rows": "506",
-        "cols": "13"
+        "cols": "13",
+        "link": "https://openml.org/d/531"
     },
 
     "colleges":
@@ -366,7 +402,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "People",
         "rows": "7,063",
-        "cols": "47"
+        "cols": "47",
+        "link": "https://openml.org/d/42727"
     },
 
     "diamonds":
@@ -376,7 +413,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Technology",
         "rows": "53,940",
-        "cols": "9"
+        "cols": "9",
+        "link": "https://openml.org/d/42225"
     },
 
     "house_sales":
@@ -386,7 +424,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Business",
         "rows": "21,613",
-        "cols": "22"
+        "cols": "22",
+        "link": "https://openml.org/d/42731"
     },
 
     "nyc-taxi-green-dec-2016":
@@ -396,7 +435,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Automotive",
         "rows": "581,835",
-        "cols": "18"
+        "cols": "18",
+        "link": "https://openml.org/d/42729"
     },
 
     "space_ga":
@@ -406,7 +446,8 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "Public Sector",
         "rows": "3,107",
-        "cols": "6"
+        "cols": "6",
+        "link": "https://openml.org/d/507"
     },
 
     "us_crime":
@@ -416,6 +457,7 @@
         "metric": "Root Mean Square Error (RMSE)",
         "category": "People",
         "rows": "1,994",
-        "cols": "127"
+        "cols": "127",
+        "link": "https://openml.org/d/42730"
     }
 }

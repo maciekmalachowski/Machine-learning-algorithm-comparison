@@ -1,1 +1,1 @@
-{"baseline": {"binary": 0, "multi": 0, "reg": 1}, "decision-tree": {"binary": 9, "multi": 5, "reg": 6}, "win": "decision-tree"}
+{"baseline": {"binary": 0, "multi": 0, "reg": 1}, "decision-tree": {"binary": 11, "multi": 5, "reg": 8}, "win": "decision-tree"}

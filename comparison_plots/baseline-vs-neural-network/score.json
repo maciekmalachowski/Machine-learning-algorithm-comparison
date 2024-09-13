@@ -1,1 +1,1 @@
-{"baseline": {"binary": 0, "multi": 0, "reg": 2}, "neural-network": {"binary": 9, "multi": 5, "reg": 5}, "win": "neural-network"}
+{"baseline": {"binary": 0, "multi": 0, "reg": 2}, "neural-network": {"binary": 11, "multi": 5, "reg": 7}, "win": "neural-network"}

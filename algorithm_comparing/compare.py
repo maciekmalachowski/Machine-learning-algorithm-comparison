@@ -18,25 +18,25 @@ def generate_models():
         # apsfailure.get_data(), #done
         # bank_marketing.get_data(),
         # banknote_authentication.get_data(),
-        # bioresponse.get_data(),
-        # black_friday.get_data(),
-        # boston.get_data(),
+        bioresponse.get_data(),
+        black_friday.get_data(),
+        boston.get_data(),
         # buzzinsocialmedia_twitter.get_data(), # more time needed
         # car.get_data(), #done
-        # churn.get_data(),
-        # click_prediction_small.get_data(),
-        # cnae_9.get_data(),
-        # colleges.get_data(),
-        # connect_4.get_data(),
-        # credit_approval.get_data(),
-        # credit_g.get_data(),
-        # diabetes.get_data(),
-        # diamonds.get_data(),
+        # churn.get_data(), #done
+        # click_prediction_small.get_data(), #done
+        # cnae_9.get_data(), #done
+        # colleges.get_data(), #done
+        # connect_4.get_data(), # more time needed
+        # credit_approval.get_data(), #done
+        # credit_g.get_data(), #done
+        # diabetes.get_data(), #done
+        # diamonds.get_data(), #done
         # electricity.get_data(), #done
         # higgs.get_data(), #done
         # house_sales.get_data(), #done
         # internet_advertisement.get_data(), #done
-        kddcup09_churn.get_data(),
+        # kddcup09_churn.get_data(), #done
         # kddcup09_upselling.get_data(), #done
         # mfeat_factors.get_data(), #done
         # moneyball.get_data(), #done
@@ -75,10 +75,11 @@ def generate_models():
 
     for data in datasets:
         for al in algorithms:
-            # make directions
+            # create directions for AutoML
             if not os.path.exists(f"AutoML/{data[2]}/{al}"):
                 os.makedirs(f"AutoML/{data[2]}/{al}")
-
+            
+            # various datasets need either rmse or accuracy as metric
             if data[-1] == "reg":
                 eval_metric = "rmse"
             else:
@@ -129,7 +130,8 @@ def generate_models():
             ldb["name"] += [m.get_type()]
             ldb["eval_metric"] += [automl._eval_metric]
             ldb["metric_value"] += [best_value]
-
+            
+            # save dataframe made of ldb to csv 
             df = pd.DataFrame(ldb)
             # os.makedirs('algorithms_info', exist_ok=True) 
             df.to_csv('algorithms_info/algorithm_leaderboard.csv', index=False) 
@@ -142,6 +144,7 @@ def compare():
     algorithms = df['name'].unique()
     used_combos = []
 
+    # comparison of algorithms each with each 
     for alg1 in algorithms:
         for alg2 in algorithms:
             if alg1 != alg2:
@@ -160,20 +163,28 @@ def compare():
                     },
                     "win": ""
                 }
+                # each comparison uses each dataset
                 for data in datasets:
                     data_name = data.replace(" ", "-").lower()
+                    # protection against comparing the same algorithms twice
                     if (f"{data_name}-{alg1}-{alg2}" and f"{data_name}-{alg2}-{alg1}") not in used_combos:
                         metric1 = df.loc[(df['dataset']==data) & (df['name']==alg1), 'metric_value'].item()
                         metric2 = df.loc[(df['dataset']==data) & (df['name']==alg2), 'metric_value'].item()
                         df_type = df.loc[(df['dataset']==data) & (df['name']==alg1), 'dataset_type'].item()
+
+                        # it's necessary (for me) for creating seaborn plot
                         plot_df = pd.DataFrame(data={'name': [alg1, alg2], 'metric_value': [metric1, metric2]})
                         plot_df = plot_df.pivot(columns="name", values="metric_value")
 
+                        # create comparison barplot
                         ax = sns.barplot(plot_df)
                         if df.loc[(df['dataset']==data) & (df['name']==alg1), 'eval_metric'].item() == 'accuracy':
+                            # put a star on the winning bar (higher metric for accuracy)
                             if metric1 > metric2:
                                 ax.plot(0, metric1/2, "*", markersize=50, color="yellow")
+                                # adjust plot height
                                 ax.set(ylim=(0, metric1+(metric1/5)))
+                                # update score
                                 if df_type=="binary":
                                     score[name1]['binary'] += 1
                                 elif df_type=="multi":
@@ -183,7 +194,9 @@ def compare():
 
                             elif metric1 < metric2:
                                 ax.plot(1, metric2/2, "*", markersize=50, color="yellow")
+                                # adjust plot height
                                 ax.set(ylim=(0, metric2+(metric2/5)))
+                                # update score
                                 if df_type=="binary":
                                     score[name2]['binary'] += 1
                                 elif df_type=="multi":
@@ -195,9 +208,12 @@ def compare():
                                 ax.set(ylim=(0, metric1+(metric1/5)))
 
                         else:
+                            # put a star on the winning bar (lower metric for rmse)
                             if metric1 < metric2:
                                 ax.plot(0, metric1/2, "*", markersize=50, color="yellow")
+                                # adjust plot height
                                 ax.set(ylim=(0, metric2+(metric2/5)))
+                                # update score
                                 if df_type=="binary":
                                     score[name1]['binary'] += 1
                                 elif df_type=="multi":
@@ -207,7 +223,9 @@ def compare():
 
                             elif metric1 > metric2:
                                 ax.plot(1, metric2/2, "*", markersize=50, color="yellow")
+                                # adjust plot height
                                 ax.set(ylim=(0, metric1+(metric1/5)))
+                                # update score
                                 if df_type=="binary":
                                     score[name2]['binary'] += 1
                                 elif df_type=="multi":
@@ -216,35 +234,41 @@ def compare():
                                     score[name2]['reg'] += 1
 
                             else:
+                                # adjust plot height in case of draw
                                 ax.set(ylim=(0, metric1+(metric1/5)))
 
+                        # set title and labels
                         ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
-
                         plt.title(f"{data}")
                         for i in ax.containers:
                             ax.bar_label(i,)                           
                         
+                        # create possible directions and save plots
                         if not os.path.exists(f"comparison_plots/{name1}-vs-{name2}"):
                             os.makedirs(f"comparison_plots/{name1}-vs-{name2}")
                         if not os.path.exists(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}"):
                             os.makedirs(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}")
+
                         plt.savefig(f'comparison_plots/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
                         plt.savefig(f'C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
                         plt.close()
 
+                        # summarize the results and selecting the winning algorithm
                         score_sum1 = score[name1]['binary'] + score[name1]['multi'] + score[name1]['reg']
                         score_sum2 = score[name2]['binary'] + score[name2]['multi'] + score[name2]['reg']
                         if score_sum1 > score_sum2:
                             score["win"] = name1
                         elif score_sum1 < score_sum2:
                             score["win"] = name2
-
+                        
+                        # save score files
                         with open(f"comparison_plots/{name1}-vs-{name2}/score.json", "w") as outfile:
                             json.dump(score, outfile)
                         
                         with open(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}/score.json", "w") as outfile:
                             json.dump(score, outfile)        
 
+                        # append used comparison to used_combos
                         used_combos.append(f"{data_name}-{alg1}-{alg2}")
                         used_combos.append(f"{data_name}-{alg2}-{alg1}")
 
@@ -255,6 +279,7 @@ def generate_md(path, rel_path, alg1, alg2):
     name1 = alg1.replace(" ", "-").lower()
     name2 = alg2.replace(" ", "-").lower()
 
+    # load json files
     json_score = open(f"{path}/score.json", "r")
     json_resources = open(f"algorithms_info/algorithms_resources.json", "r")
     json_datasets = open(f"algorithms_info/datasets_info.json", "r")
@@ -264,8 +289,10 @@ def generate_md(path, rel_path, alg1, alg2):
     resources = json.load(json_resources)
     datasets = json.load(json_datasets)
 
+    # create markdown file
     md_file = open(f"C:/Users/Maciek/website-mljar/src/content/machine-learning/{name1}-vs-{name2}.md", "w")
 
+    # create markdown content
     content = f'''---
 title: "{alg1} vs {alg2}"
 description: Comparison of {alg1} and {alg2} with examples on different datasets.
@@ -283,7 +310,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 
 <div class="flex flex-col sm:flex-row px-8">
 <div class="basis-1/2 text-justify sm:mr-8 mb-8 sm:mb-0">
-<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-gray-600 rounded-lg">
+<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg">
 <p>
 {resources[name1]["desc"]}
 </p>
@@ -300,7 +327,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 </div>
 
 <div class="basis-1/2 text-justify sm:ml-8">
-<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-gray-600 rounded-lg">
+<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg">
 <p>
 {resources[name2]["desc"]}
 </p>
@@ -327,7 +354,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["reg"]}:{score[name2]["reg"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
 </div>
 <div class="basis-1/2 bg-slate-50 rounded-lg">
-<img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-96 mx-auto mb-2">
+<img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-72 mx-auto">
 <img src='/machine-learning/compete.svg' class="not-prose w-64 mx-auto">
 </div>
 </div>
@@ -359,7 +386,8 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <p><b>{alg1}</b> {round(float(metric1),5):,} - vs - {round(float(metric2),5):,} <b>{alg2}</b></p>
 <p classs="text-pretty">{datasets[dataset_name]["desc"]}</p>
 <p><b>Category:</b> {datasets[dataset_name]["category"]}</p>
-<p><b>Rows:</b> {datasets[dataset_name]["rows"]} <b>Columns:</b> {datasets[dataset_name]["cols"]}</p> 
+<p><b>Rows:</b> {datasets[dataset_name]["rows"]} <b>Columns:</b> {datasets[dataset_name]["cols"]}</p>
+<p><b>Available at OpenML: </b><a href="{datasets[dataset_name]["link"]}" class="no-underline" target="_blank">{datasets[dataset_name]["link"]}</a></p>
 </div>
 </div>
 </div>
@@ -367,8 +395,10 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
     '''
         content += '''</section>'''
 
+    # save markdown content
     md_file.write(content)
 
+    # close files to save resources
     json_score.close()
     json_resources.close()
     json_datasets.close()
@@ -376,8 +406,8 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
     del df
     
 
-# generate_models()
-compare()
+generate_models()
+# compare()
 
 
 
