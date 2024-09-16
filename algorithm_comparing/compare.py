@@ -1,7 +1,7 @@
 import os
+import json
 import pandas as pd
 import seaborn as sns
-import json
 import matplotlib.pyplot as plt
 from supervised import AutoML
 
@@ -9,48 +9,48 @@ from datasets import abalone, adult, airlines_depdelay_1m,  allstate_claims_seve
 
 def generate_models():
     datasets = [
-        # abalone.get_data(), #done
-        # adult.get_data(), #done
-        # airlines_depdelay_1m.get_data(), # more time needed
-        # allstate_claims_severity.get_data(),
-        # amazon_commerce_reviews.get_data(),
-        # amazon_employee_access.get_data(),
-        # apsfailure.get_data(), #done
-        # bank_marketing.get_data(),
-        # banknote_authentication.get_data(),
-        bioresponse.get_data(),
-        black_friday.get_data(),
-        boston.get_data(),
+        abalone.get_data(), 
+        # adult.get_data(), 
+        # airlines_depdelay_1m.get_data(), 
+        # allstate_claims_severity.get_data(), 
+        # amazon_commerce_reviews.get_data(), 
+        # amazon_employee_access.get_data(), 
+        # apsfailure.get_data(), 
+        # bank_marketing.get_data(), 
+        # banknote_authentication.get_data(), 
+        # bioresponse.get_data(), 
+        # black_friday.get_data(), # more time needed
+        # boston.get_data(), 
         # buzzinsocialmedia_twitter.get_data(), # more time needed
-        # car.get_data(), #done
-        # churn.get_data(), #done
-        # click_prediction_small.get_data(), #done
-        # cnae_9.get_data(), #done
-        # colleges.get_data(), #done
+        # car.get_data(), 
+        # churn.get_data(), 
+        # click_prediction_small.get_data(), 
+        # cnae_9.get_data(), 
+        # colleges.get_data(), 
         # connect_4.get_data(), # more time needed
-        # credit_approval.get_data(), #done
-        # credit_g.get_data(), #done
-        # diabetes.get_data(), #done
-        # diamonds.get_data(), #done
-        # electricity.get_data(), #done
-        # higgs.get_data(), #done
-        # house_sales.get_data(), #done
-        # internet_advertisement.get_data(), #done
-        # kddcup09_churn.get_data(), #done
-        # kddcup09_upselling.get_data(), #done
-        # mfeat_factors.get_data(), #done
-        # moneyball.get_data(), #done
+        # credit_approval.get_data(), 
+        # credit_g.get_data(), 
+        # diabetes.get_data(), 
+        # diamonds.get_data(), 
+        # electricity.get_data(), 
+        # higgs.get_data(), 
+        # house_sales.get_data(), 
+        # internet_advertisement.get_data(), 
+        # kddcup09_churn.get_data(), 
+        # kddcup09_upselling.get_data(), 
+        # mfeat_factors.get_data(), 
+        # moneyball.get_data(), 
         # nyc_taxi_gree_dec2016.get_data(), # more time needed 
-        # onlinenewspopularity.get_data(), #done
-        # phishing_websites.get_data(), #done
-        # santander_transaction_volume.get_data(), #done
-        # segment.get_data(), #done
-        # space_ga.get_data(), #done
-        # spambase.get_data(), #done
-        # us_crime.get_data(), #done
-        # vehicle.get_data(), #done
-        # wdbc.get_data(), #done
-        # wine_quality.get_data() #done
+        # onlinenewspopularity.get_data(), 
+        # phishing_websites.get_data(), 
+        # santander_transaction_volume.get_data(),
+        # segment.get_data(), 
+        # space_ga.get_data(), 
+        # spambase.get_data(), 
+        # us_crime.get_data(), 
+        # vehicle.get_data(), 
+        # wdbc.get_data(), 
+        # wine_quality.get_data() 
     ]
 
     algorithms=[
@@ -88,9 +88,9 @@ def generate_models():
             # create automl object
             automl = AutoML(
                 mode="Compete", 
-                total_time_limit=300, 
+                total_time_limit=600, 
                 results_path=f"AutoML/{data[2]}/{al}", 
-                algorithms=[al], 
+                algorithms=[al],
                 train_ensemble=False,
                 golden_features=False,
                 features_selection=False,
@@ -114,15 +114,20 @@ def generate_models():
             # train automl
             automl.fit(data[0], data[1])
 
-            # choose best model
-            best_value = 0
+            # choose best model metric value
+            if eval_metric == "rmse":
+                best_value = pow(10,10)
+            else:
+                best_value = 0
+
             for m in automl._models:
-                if m.get_final_loss() < 0:
-                    metric_value = m.get_final_loss()*(-1)
+                metric_value = m.get_final_loss()
+                if eval_metric == "rmse":
+                    if metric_value <= best_value:
+                        best_value = metric_value
                 else:
-                    metric_value = m.get_final_loss()
-                if metric_value >= best_value:
-                    best_value = metric_value
+                    if metric_value >= best_value:
+                        best_value = metric_value
 
             # update leaderboard
             ldb["dataset"] += [data[2]]
@@ -178,6 +183,7 @@ def compare():
 
                         # create comparison barplot
                         ax = sns.barplot(plot_df)
+
                         if df.loc[(df['dataset']==data) & (df['name']==alg1), 'eval_metric'].item() == 'accuracy':
                             # put a star on the winning bar (higher metric for accuracy)
                             if metric1 > metric2:
@@ -205,6 +211,7 @@ def compare():
                                     score[name2]['reg'] += 1
                             
                             else:
+                                # adjust plot height in case of draw
                                 ax.set(ylim=(0, metric1+(metric1/5)))
 
                         else:
@@ -238,8 +245,8 @@ def compare():
                                 ax.set(ylim=(0, metric1+(metric1/5)))
 
                         # set title and labels
-                        ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
                         plt.title(f"{data}")
+                        ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
                         for i in ax.containers:
                             ax.bar_label(i,)                           
                         
@@ -253,7 +260,7 @@ def compare():
                         plt.savefig(f'C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
                         plt.close()
 
-                        # summarize the results and selecting the winning algorithm
+                        # summarize the results and select the winning algorithm
                         score_sum1 = score[name1]['binary'] + score[name1]['multi'] + score[name1]['reg']
                         score_sum2 = score[name2]['binary'] + score[name2]['multi'] + score[name2]['reg']
                         if score_sum1 > score_sum2:
@@ -311,35 +318,24 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <div class="flex flex-col sm:flex-row px-8">
 <div class="basis-1/2 text-justify sm:mr-8 mb-8 sm:mb-0">
 <img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg">
-<p>
-{resources[name1]["desc"]}
-</p>
-<p>
+<p>{resources[name1]["desc"]}</p>
 <h2 class='mb-2'>References</h2>
 <ul class='text-left'>
 {resources[name1]["ref"]}
 </ul>
-</p>
-<p>
 <h2 class='mb-2'>License</h2>
-{resources[name1]["license"]}
-</p>
+<p>{resources[name1]["license"]}</p>
 </div>
 
 <div class="basis-1/2 text-justify sm:ml-8">
 <img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg">
-<p>
-{resources[name2]["desc"]}
-</p>
+<p>{resources[name2]["desc"]}</p>
 <h2 class='mb-2'>References</h2>
 <ul class='text-left'>
 {resources[name2]["ref"]}
 </ul>
-</p>
-<p>
 <h2 class='mb-2'>License</h2>
-{resources[name2]["license"]}
-</p>
+<p>{resources[name2]["license"]}</p>
 </div>
 </div>
 
@@ -358,12 +354,14 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <img src='/machine-learning/compete.svg' class="not-prose w-64 mx-auto">
 </div>
 </div>
+</section>
 
 <hr>
 '''
     types = ["Binary classification", "Multiclass classification", "Regression"]
     for type in types:
         content += f'''
+<section>
 <div class="w-full text-center text-3xl">
 <h2>{type}</h2>
 </div>

@@ -3,7 +3,7 @@
     {
         "desc": "<b>Baseline</b> is the simplest algorithm that provides predictions without complex computations. For classification tasks, the Baseline returns the most frequent class. For regression tasks, the Baseline returns the average of the target from training data.",
         "license": "License for Scikit-Learn implementation of Baseline: New BSD License",
-        "ref": "The simplest algorithm doesn't need references :)"
+        "ref": "The simplest algorithm doesn't have much references"
     },
 
     "catboost":

@@ -285,17 +285,6 @@
         "link": "https://openml.org/d/54"
     },
 
-    "wine_quality":
-    {
-        "type": "Multiclass classification",
-        "desc": "This is a Wine Quality database. Datasets are related to red and white. This is a Wine Quality database. Datasets are related to red and white variants of the Portuguese 'Vinho Verde' wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g., there is no data about grape types, wine brand, wine selling price, etc.). The inputs include objective tests (e.g., PH values), and the output is based on sensory data (median of at least 3 evaluations made by wine experts). Each expert graded the wine quality between 0 (very bad) and 10 (very excellent).",
-        "metric": "Accuracy",
-        "category": "Retail",
-        "rows": "6,497",
-        "cols": "11",
-        "link": "https://openml.org/d/287"
-    },
-
     "airlines_depdelay_1m":
     {
         "type": "Regression",
@@ -459,5 +448,16 @@
         "rows": "1,994",
         "cols": "127",
         "link": "https://openml.org/d/42730"
+    },
+
+    "wine_quality":
+    {
+        "type": "Regression",
+        "desc": "This is a Wine Quality database. Datasets are related to red and white variants of the Portuguese 'Vinho Verde' wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g., there is no data about grape types, wine brand, wine selling price, etc.). The inputs include objective tests (e.g., PH values), and the output is based on sensory data (median of at least 3 evaluations made by wine experts). Each expert graded the wine quality between 0 (very bad) and 10 (very excellent).",
+        "metric": "Root Mean Square Error (RMSE)",
+        "category": "Retail",
+        "rows": "6,497",
+        "cols": "11",
+        "link": "https://openml.org/d/287"
     }
 }
