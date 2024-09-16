@@ -9,8 +9,8 @@ from datasets import abalone, adult, airlines_depdelay_1m,  allstate_claims_seve
 
 def generate_models():
     datasets = [
-        abalone.get_data(), 
-        # adult.get_data(), 
+        # abalone.get_data(), 
+        adult.get_data(), 
         # airlines_depdelay_1m.get_data(), 
         # allstate_claims_severity.get_data(), 
         # amazon_commerce_reviews.get_data(), 
@@ -116,25 +116,16 @@ def generate_models():
 
             # choose best model metric value
             if eval_metric == "rmse":
-                best_value = pow(10,10)
+                best_model_value = automl._best_model.get_final_loss()
             else:
-                best_value = 0
-
-            for m in automl._models:
-                metric_value = m.get_final_loss()
-                if eval_metric == "rmse":
-                    if metric_value <= best_value:
-                        best_value = metric_value
-                else:
-                    if metric_value >= best_value:
-                        best_value = metric_value
+                best_model_value = automl._best_model.get_final_loss()*(-1)
 
             # update leaderboard
             ldb["dataset"] += [data[2]]
             ldb["dataset_type"] += [data[-1]]
-            ldb["name"] += [m.get_type()]
+            ldb["name"] += [automl._best_model.get_type()]
             ldb["eval_metric"] += [automl._eval_metric]
-            ldb["metric_value"] += [best_value]
+            ldb["metric_value"] += [best_model_value]
             
             # save dataframe made of ldb to csv 
             df = pd.DataFrame(ldb)

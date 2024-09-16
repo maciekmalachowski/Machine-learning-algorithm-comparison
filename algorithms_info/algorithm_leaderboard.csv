@@ -1,2 +1,3 @@
 dataset,dataset_type,name,eval_metric,metric_value
-
+Adult,binary,Baseline,accuracy,0.7607182343065395
+Adult,binary,CatBoost,accuracy,0.8750051185455141
