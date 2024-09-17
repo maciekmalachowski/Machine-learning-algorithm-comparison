@@ -9,22 +9,22 @@ from datasets import abalone, adult, airlines_depdelay_1m,  allstate_claims_seve
 
 def generate_models():
     datasets = [
-        # abalone.get_data(), 
-        adult.get_data(), 
-        # airlines_depdelay_1m.get_data(), 
-        # allstate_claims_severity.get_data(), 
-        # amazon_commerce_reviews.get_data(), 
-        # amazon_employee_access.get_data(), 
-        # apsfailure.get_data(), 
-        # bank_marketing.get_data(), 
-        # banknote_authentication.get_data(), 
-        # bioresponse.get_data(), 
-        # black_friday.get_data(), # more time needed
-        # boston.get_data(), 
-        # buzzinsocialmedia_twitter.get_data(), # more time needed
-        # car.get_data(), 
-        # churn.get_data(), 
-        # click_prediction_small.get_data(), 
+        # abalone.get_data(), #done
+        # adult.get_data(), #done
+        # airlines_depdelay_1m.get_data(), #done 
+        # allstate_claims_severity.get_data(), #done
+        # amazon_commerce_reviews.get_data(), #done
+        # amazon_employee_access.get_data(), #done
+        # apsfailure.get_data(), #done
+        # bank_marketing.get_data(), #done
+        # banknote_authentication.get_data(), #done
+        # bioresponse.get_data(), #done
+        # black_friday.get_data(), #done
+        # boston.get_data(), #done
+        # buzzinsocialmedia_twitter.get_data(), #done
+        # car.get_data(), #done
+        # churn.get_data(), #done
+        # click_prediction_small.get_data(), #done
         # cnae_9.get_data(), 
         # colleges.get_data(), 
         # connect_4.get_data(), # more time needed
@@ -71,13 +71,13 @@ def generate_models():
             "name": [],
             "eval_metric": [],
             "metric_value": [],
-            }
+    }
 
     for data in datasets:
-        for al in algorithms:
+        for alg in algorithms:
             # create directions for AutoML
-            if not os.path.exists(f"AutoML/{data[2]}/{al}"):
-                os.makedirs(f"AutoML/{data[2]}/{al}")
+            if not os.path.exists(f"AutoML/{data[2]}/{alg}"):
+                os.makedirs(f"AutoML/{data[2]}/{alg}")
             
             # various datasets need either rmse or accuracy as metric
             if data[-1] == "reg":
@@ -89,8 +89,8 @@ def generate_models():
             automl = AutoML(
                 mode="Compete", 
                 total_time_limit=600, 
-                results_path=f"AutoML/{data[2]}/{al}", 
-                algorithms=[al],
+                results_path=f"AutoML/{data[2]}/{alg}", 
+                algorithms=[alg],
                 train_ensemble=False,
                 golden_features=False,
                 features_selection=False,
@@ -114,18 +114,12 @@ def generate_models():
             # train automl
             automl.fit(data[0], data[1])
 
-            # choose best model metric value
-            if eval_metric == "rmse":
-                best_model_value = automl._best_model.get_final_loss()
-            else:
-                best_model_value = automl._best_model.get_final_loss()*(-1)
-
             # update leaderboard
             ldb["dataset"] += [data[2]]
             ldb["dataset_type"] += [data[-1]]
             ldb["name"] += [automl._best_model.get_type()]
             ldb["eval_metric"] += [automl._eval_metric]
-            ldb["metric_value"] += [best_model_value]
+            ldb["metric_value"] += [automl._best_model.get_final_loss() if automl._best_model.get_final_loss() > 0 else automl._best_model.get_final_loss()*(-1)]
             
             # save dataframe made of ldb to csv 
             df = pd.DataFrame(ldb)
@@ -161,9 +155,9 @@ def compare():
                 }
                 # each comparison uses each dataset
                 for data in datasets:
-                    data_name = data.replace(" ", "-").lower()
+                    data_name = data.lower()
                     # protection against comparing the same algorithms twice
-                    if (f"{data_name}-{alg1}-{alg2}" and f"{data_name}-{alg2}-{alg1}") not in used_combos:
+                    if (f"{data_name}-{name1}-{name2}" and f"{data_name}-{name2}-{name1}") not in used_combos:
                         metric1 = df.loc[(df['dataset']==data) & (df['name']==alg1), 'metric_value'].item()
                         metric2 = df.loc[(df['dataset']==data) & (df['name']==alg2), 'metric_value'].item()
                         df_type = df.loc[(df['dataset']==data) & (df['name']==alg1), 'dataset_type'].item()
@@ -237,7 +231,7 @@ def compare():
 
                         # set title and labels
                         plt.title(f"{data}")
-                        ax.set(xlabel='', ylabel=df.loc[(df["dataset"]==data) & (df['name']==alg1), 'eval_metric'].to_numpy()[0])
+                        ax.set(xlabel='', ylabel=df.loc[(df['dataset']==data) & (df['name']==alg1), 'eval_metric'].item())
                         for i in ax.containers:
                             ax.bar_label(i,)                           
                         
@@ -247,13 +241,14 @@ def compare():
                         if not os.path.exists(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}"):
                             os.makedirs(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}")
 
-                        plt.savefig(f'comparison_plots/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
-                        plt.savefig(f'C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}/{data_name}_{name1}-vs-{name2}.png')
+                        plt.savefig(f'comparison_plots/{name1}-vs-{name2}/{data_name}.png')
+                        plt.savefig(f'C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}/{data_name}.png')
                         plt.close()
 
                         # summarize the results and select the winning algorithm
                         score_sum1 = score[name1]['binary'] + score[name1]['multi'] + score[name1]['reg']
                         score_sum2 = score[name2]['binary'] + score[name2]['multi'] + score[name2]['reg']
+
                         if score_sum1 > score_sum2:
                             score["win"] = name1
                         elif score_sum1 < score_sum2:
@@ -267,17 +262,18 @@ def compare():
                             json.dump(score, outfile)        
 
                         # append used comparison to used_combos
-                        used_combos.append(f"{data_name}-{alg1}-{alg2}")
-                        used_combos.append(f"{data_name}-{alg2}-{alg1}")
+                        used_combos.append(f"{data_name}-{name1}-{name2}")
+                        used_combos.append(f"{data_name}-{name2}-{name1}")
 
-                        generate_md(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}", f"machine-learning/{name1}-vs-{name2}", alg1, alg2)
+                        generate_md(f"C:/Users/Maciek/website-mljar/public/machine-learning/{name1}-vs-{name2}", alg1, alg2)
 
 
-def generate_md(path, rel_path, alg1, alg2):
+def generate_md(path, alg1, alg2):
+    rel_path = path.replace("C:/Users/Maciek/website-mljar/public/", "")
     name1 = alg1.replace(" ", "-").lower()
     name2 = alg2.replace(" ", "-").lower()
 
-    # load json files
+    # open and load json files
     json_score = open(f"{path}/score.json", "r")
     json_resources = open(f"algorithms_info/algorithms_resources.json", "r")
     json_datasets = open(f"algorithms_info/datasets_info.json", "r")
@@ -359,7 +355,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 '''
         for plot in os.listdir(path):
             if (plot.endswith(".png")):
-                dataset_name = os.path.relpath(plot).replace(f"_{name1}-vs-{name2}.png", "")
+                dataset_name = os.path.relpath(plot).replace(f".png", "")
                 metric1 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg1), 'metric_value'].item()
                 metric2 = df.loc[(df['dataset']==dataset_name.capitalize()) & (df['name']==alg2), 'metric_value'].item()
                 if datasets[dataset_name]["type"] == type:
@@ -395,8 +391,8 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
     del df
     
 
-generate_models()
-# compare()
+# generate_models()
+compare()
 
 
 

@@ -1,0 +1,1 @@
+{"catboost": {"binary": 7, "multi": 1, "reg": 4}, "neural-network": {"binary": 1, "multi": 1, "reg": 2}, "win": "catboost"}

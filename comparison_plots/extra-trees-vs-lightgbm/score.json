@@ -1,0 +1,1 @@
+{"extra-trees": {"binary": 0, "multi": 0, "reg": 1}, "lightgbm": {"binary": 8, "multi": 2, "reg": 5}, "win": "lightgbm"}

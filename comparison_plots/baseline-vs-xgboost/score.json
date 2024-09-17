@@ -1,0 +1,1 @@
+{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "xgboost": {"binary": 8, "multi": 2, "reg": 6}, "win": "xgboost"}
