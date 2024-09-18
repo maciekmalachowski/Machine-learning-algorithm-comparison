@@ -127,3 +127,99 @@ Click_prediction_small,binary,LightGBM,accuracy,0.8365124662060679
 Click_prediction_small,binary,Neural Network,accuracy,0.8333333333333334
 Click_prediction_small,binary,Random Forest,accuracy,0.8351607089215981
 Click_prediction_small,binary,Xgboost,accuracy,0.8366376289175929
+Cnae_9,multi,Baseline,accuracy,0.1111111111111111
+Cnae_9,multi,CatBoost,accuracy,0.937962962962963
+Cnae_9,multi,Decision Tree,accuracy,0.4601851851851852
+Cnae_9,multi,Extra Trees,accuracy,0.7796296296296297
+Cnae_9,multi,LightGBM,accuracy,0.9287037037037037
+Cnae_9,multi,Neural Network,accuracy,0.9574074074074074
+Cnae_9,multi,Random Forest,accuracy,0.762962962962963
+Cnae_9,multi,Xgboost,accuracy,0.925
+Colleges,reg,Baseline,rmse,0.224940553577702
+Colleges,reg,CatBoost,rmse,0.14219575548877286
+Colleges,reg,Decision Tree,rmse,0.17300921804543326
+Colleges,reg,Extra Trees,rmse,0.15910190382962672
+Colleges,reg,LightGBM,rmse,0.1429586484289803
+Colleges,reg,Neural Network,rmse,0.16423662343678985
+Colleges,reg,Random Forest,rmse,0.1563343647407181
+Colleges,reg,Xgboost,rmse,0.14495642471652798
+Connect_4,multi,Baseline,accuracy,0.6583033586452921
+Connect_4,multi,CatBoost,accuracy,0.8204479180543837
+Connect_4,multi,Decision Tree,accuracy,0.6771911126900247
+Connect_4,multi,Extra Trees,accuracy,0.7234631496366032
+Connect_4,multi,LightGBM,accuracy,0.8650917003419335
+Connect_4,multi,Neural Network,accuracy,0.804727859437216
+Connect_4,multi,Random Forest,accuracy,0.7195109315096881
+Connect_4,multi,Xgboost,accuracy,0.8652545258078363
+Credit_approval,binary,Baseline,accuracy,0.5550724637681159
+Credit_approval,binary,CatBoost,accuracy,0.8956521739130435
+Credit_approval,binary,Decision Tree,accuracy,0.8434782608695652
+Credit_approval,binary,Extra Trees,accuracy,0.8855072463768116
+Credit_approval,binary,LightGBM,accuracy,0.8927536231884058
+Credit_approval,binary,Neural Network,accuracy,0.8695652173913043
+Credit_approval,binary,Random Forest,accuracy,0.8884057971014493
+Credit_approval,binary,Xgboost,accuracy,0.8898550724637682
+Credit_g,binary,Baseline,accuracy,0.7
+Credit_g,binary,CatBoost,accuracy,0.792
+Credit_g,binary,Decision Tree,accuracy,0.727
+Credit_g,binary,Extra Trees,accuracy,0.775
+Credit_g,binary,LightGBM,accuracy,0.788
+Credit_g,binary,Neural Network,accuracy,0.729
+Credit_g,binary,Random Forest,accuracy,0.784
+Credit_g,binary,Xgboost,accuracy,0.79
+Diabetes,binary,Baseline,accuracy,0.6510416666666666
+Diabetes,binary,CatBoost,accuracy,0.7994791666666666
+Diabetes,binary,Decision Tree,accuracy,0.7486979166666666
+Diabetes,binary,Extra Trees,accuracy,0.8033854166666666
+Diabetes,binary,LightGBM,accuracy,0.79296875
+Diabetes,binary,Neural Network,accuracy,0.7669270833333334
+Diabetes,binary,Random Forest,accuracy,0.79296875
+Diabetes,binary,Xgboost,accuracy,0.7955729166666666
+Diamonds,reg,Baseline,rmse,3989.451294651254
+Diamonds,reg,CatBoost,rmse,527.7722674333506
+Diamonds,reg,Decision Tree,rmse,1224.8458366284324
+Diamonds,reg,Extra Trees,rmse,940.5511145050336
+Diamonds,reg,LightGBM,rmse,530.8413816186751
+Diamonds,reg,Neural Network,rmse,715.3343040338458
+Diamonds,reg,Random Forest,rmse,740.9574490742096
+Diamonds,reg,Xgboost,rmse,535.012897036625
+Electricity,binary,Baseline,accuracy,0.5754546257062146
+Electricity,binary,CatBoost,accuracy,0.904638947740113
+Electricity,binary,Decision Tree,accuracy,0.762601518361582
+Electricity,binary,Extra Trees,accuracy,0.7926377118644068
+Electricity,binary,LightGBM,accuracy,0.9438117937853108
+Electricity,binary,Neural Network,accuracy,0.8124337923728814
+Electricity,binary,Random Forest,accuracy,0.8178628177966102
+Electricity,binary,Xgboost,accuracy,0.9416269420903954
+Higgs,binary,Baseline,accuracy,0.5285772565017848
+Higgs,binary,CatBoost,accuracy,0.7303314635390107
+Higgs,binary,Decision Tree,accuracy,0.657817440081591
+Higgs,binary,Extra Trees,accuracy,0.6766547679755227
+Higgs,binary,LightGBM,accuracy,0.7302294747577767
+Higgs,binary,Neural Network,accuracy,0.7181030086690464
+Higgs,binary,Random Forest,accuracy,0.7023865374808771
+Higgs,binary,Xgboost,accuracy,0.7307802141764406
+House_sales,reg,Baseline,rmse,367123.6840448106
+House_sales,reg,CatBoost,rmse,111992.81294718367
+House_sales,reg,Decision Tree,rmse,220382.08759970023
+House_sales,reg,Extra Trees,rmse,167567.94079912754
+House_sales,reg,LightGBM,rmse,115024.13670341155
+House_sales,reg,Neural Network,rmse,124500.51896322695
+House_sales,reg,Random Forest,rmse,149168.03041338077
+House_sales,reg,Xgboost,rmse,116544.09148576176
+Internet_advertisements,binary,Baseline,accuracy,0.8600182982616651
+Internet_advertisements,binary,CatBoost,accuracy,0.9795669411405916
+Internet_advertisements,binary,Decision Tree,accuracy,0.9627935346142117
+Internet_advertisements,binary,Extra Trees,accuracy,0.970722781335773
+Internet_advertisements,binary,LightGBM,accuracy,0.9804818542238487
+Internet_advertisements,binary,Neural Network,accuracy,0.9688929551692589
+Internet_advertisements,binary,Random Forest,accuracy,0.9716376944190301
+Internet_advertisements,binary,Xgboost,accuracy,0.976517230863068
+Kddcup09_churn,binary,Baseline,accuracy,0.92656
+Kddcup09_churn,binary,CatBoost,accuracy,0.92764
+Kddcup09_churn,binary,Decision Tree,accuracy,0.92656
+Kddcup09_churn,binary,Extra Trees,accuracy,0.92682
+Kddcup09_churn,binary,LightGBM,accuracy,0.92762
+Kddcup09_churn,binary,Neural Network,accuracy,0.92656
+Kddcup09_churn,binary,Random Forest,accuracy,0.9269
+Kddcup09_churn,binary,Xgboost,accuracy,0.9276

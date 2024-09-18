@@ -1,1 +1,1 @@
-{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "random-forest": {"binary": 8, "multi": 2, "reg": 6}, "win": "random-forest"}
+{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "random-forest": {"binary": 15, "multi": 4, "reg": 9}, "win": "random-forest"}

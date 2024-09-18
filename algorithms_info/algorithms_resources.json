@@ -3,7 +3,14 @@
     {
         "desc": "<b>Baseline</b> is the simplest algorithm that provides predictions without complex computations. For classification tasks, the Baseline returns the most frequent class. For regression tasks, the Baseline returns the average of the target from training data.",
         "license": "License for Scikit-Learn implementation of Baseline: New BSD License",
-        "ref": "The simplest algorithm doesn't have much references"
+        "ref": ""
+    },
+
+    "linear":
+    {
+        "desc":"<b>Linear</b> (Linear Regression for regression tasks, and Logistic Regression for classification tasks) is a linear approach of modelling relationship between target valiable and explanatory variables.",
+        "license": "License for Scikit-Learn implementation of Random Forest: New BSD License",
+        "ref":""
     },
 
     "catboost":

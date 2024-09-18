@@ -1,1 +1,1 @@
-{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "extra-trees": {"binary": 8, "multi": 2, "reg": 6}, "win": "extra-trees"}
+{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "extra-trees": {"binary": 15, "multi": 4, "reg": 9}, "win": "extra-trees"}

@@ -25,19 +25,19 @@ def generate_models():
         # car.get_data(), #done
         # churn.get_data(), #done
         # click_prediction_small.get_data(), #done
-        # cnae_9.get_data(), 
-        # colleges.get_data(), 
-        # connect_4.get_data(), # more time needed
-        # credit_approval.get_data(), 
-        # credit_g.get_data(), 
-        # diabetes.get_data(), 
-        # diamonds.get_data(), 
-        # electricity.get_data(), 
-        # higgs.get_data(), 
-        # house_sales.get_data(), 
-        # internet_advertisement.get_data(), 
-        # kddcup09_churn.get_data(), 
-        # kddcup09_upselling.get_data(), 
+        # cnae_9.get_data(), #done
+        # colleges.get_data(), #done
+        # connect_4.get_data(), #done
+        # credit_approval.get_data(), #done
+        # credit_g.get_data(), #done
+        # diabetes.get_data(), #done
+        # diamonds.get_data(), #done
+        # electricity.get_data(), #done
+        # higgs.get_data(), #done
+        # house_sales.get_data(), #done
+        # internet_advertisement.get_data(), #done
+        # kddcup09_churn.get_data(), #done
+        # kddcup09_upselling.get_data(), #done
         # mfeat_factors.get_data(), 
         # moneyball.get_data(), 
         # nyc_taxi_gree_dec2016.get_data(), # more time needed 
@@ -55,6 +55,7 @@ def generate_models():
 
     algorithms=[
             'Baseline',
+            # 'Linear',
             'CatBoost',
             'Decision Tree',
             'Extra Trees',

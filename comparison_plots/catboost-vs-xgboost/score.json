@@ -1,1 +1,1 @@
-{"catboost": {"binary": 4, "multi": 1, "reg": 1}, "xgboost": {"binary": 4, "multi": 1, "reg": 5}, "win": "xgboost"}
+{"catboost": {"binary": 9, "multi": 2, "reg": 4}, "xgboost": {"binary": 6, "multi": 2, "reg": 5}, "win": "catboost"}

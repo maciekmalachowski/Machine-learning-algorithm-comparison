@@ -1,1 +1,1 @@
-{"catboost": {"binary": 8, "multi": 2, "reg": 5}, "decision-tree": {"binary": 0, "multi": 0, "reg": 1}, "win": "catboost"}
+{"catboost": {"binary": 15, "multi": 4, "reg": 8}, "decision-tree": {"binary": 0, "multi": 0, "reg": 1}, "win": "catboost"}
