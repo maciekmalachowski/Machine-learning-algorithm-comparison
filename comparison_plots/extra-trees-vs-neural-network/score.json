@@ -1,1 +1,1 @@
-{"extra-trees": {"binary": 7, "multi": 0, "reg": 2}, "neural-network": {"binary": 8, "multi": 4, "reg": 7}, "win": "neural-network"}
+{"extra-trees": {"binary": 8, "multi": 0, "reg": 3}, "neural-network": {"binary": 8, "multi": 5, "reg": 8}, "win": "neural-network"}

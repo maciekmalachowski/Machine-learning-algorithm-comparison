@@ -1,1 +1,1 @@
-{"neural-network": {"binary": 1, "multi": 1, "reg": 2}, "xgboost": {"binary": 14, "multi": 3, "reg": 7}, "win": "xgboost"}
+{"neural-network": {"binary": 1, "multi": 1, "reg": 2}, "xgboost": {"binary": 15, "multi": 4, "reg": 9}, "win": "xgboost"}

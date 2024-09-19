@@ -1,1 +1,1 @@
-{"decision-tree": {"binary": 0, "multi": 0, "reg": 1}, "random-forest": {"binary": 15, "multi": 4, "reg": 8}, "win": "random-forest"}
+{"decision-tree": {"binary": 0, "multi": 0, "reg": 1}, "random-forest": {"binary": 16, "multi": 5, "reg": 10}, "win": "random-forest"}

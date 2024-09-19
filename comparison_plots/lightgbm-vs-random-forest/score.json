@@ -1,1 +1,1 @@
-{"lightgbm": {"binary": 14, "multi": 4, "reg": 8}, "random-forest": {"binary": 0, "multi": 0, "reg": 1}, "win": "lightgbm"}
+{"lightgbm": {"binary": 15, "multi": 5, "reg": 10}, "random-forest": {"binary": 0, "multi": 0, "reg": 1}, "win": "lightgbm"}

@@ -417,7 +417,7 @@
         "link": "https://openml.org/d/42731"
     },
 
-    "nyc-taxi-green-dec-2016":
+    "nyc_taxi_green_dec_2016":
     {
         "type": "Regression",
         "desc": "This is a Trip Record Data database. It is provided by the New York City Taxi and Limousine Commission (TLC). The dataset included TLC trips of the green line in December 2016.",

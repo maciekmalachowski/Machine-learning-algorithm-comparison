@@ -223,3 +223,35 @@ Kddcup09_churn,binary,LightGBM,accuracy,0.92762
 Kddcup09_churn,binary,Neural Network,accuracy,0.92656
 Kddcup09_churn,binary,Random Forest,accuracy,0.9269
 Kddcup09_churn,binary,Xgboost,accuracy,0.9276
+Kddcup09_upselling,binary,Baseline,accuracy,0.92636
+Kddcup09_upselling,binary,CatBoost,accuracy,0.95176
+Kddcup09_upselling,binary,Decision Tree,accuracy,0.95088
+Kddcup09_upselling,binary,Extra Trees,accuracy,0.94918
+Kddcup09_upselling,binary,LightGBM,accuracy,0.95168
+Kddcup09_upselling,binary,Neural Network,accuracy,0.93464
+Kddcup09_upselling,binary,Random Forest,accuracy,0.95144
+Kddcup09_upselling,binary,Xgboost,accuracy,0.9518
+Mfeat_factors,multi,Baseline,accuracy,0.1
+Mfeat_factors,multi,CatBoost,accuracy,0.9725
+Mfeat_factors,multi,Decision Tree,accuracy,0.782
+Mfeat_factors,multi,Extra Trees,accuracy,0.966
+Mfeat_factors,multi,LightGBM,accuracy,0.975
+Mfeat_factors,multi,Neural Network,accuracy,0.9695
+Mfeat_factors,multi,Random Forest,accuracy,0.9555
+Mfeat_factors,multi,Xgboost,accuracy,0.9705
+Moneyball,reg,Baseline,rmse,91.61779712686398
+Moneyball,reg,CatBoost,rmse,22.546793903207064
+Moneyball,reg,Decision Tree,rmse,32.17625866177303
+Moneyball,reg,Extra Trees,rmse,25.19153727624198
+Moneyball,reg,LightGBM,rmse,22.87451108527868
+Moneyball,reg,Neural Network,rmse,35.30850616345372
+Moneyball,reg,Random Forest,rmse,24.499861357162395
+Moneyball,reg,Xgboost,rmse,22.592166677602634
+Nyc_taxi_green_dec_2016,reg,Baseline,rmse,2.7137187281910347
+Nyc_taxi_green_dec_2016,reg,CatBoost,rmse,1.823185956910083
+Nyc_taxi_green_dec_2016,reg,Decision Tree,rmse,2.051282043337828
+Nyc_taxi_green_dec_2016,reg,Extra Trees,rmse,1.9180758587738655
+Nyc_taxi_green_dec_2016,reg,LightGBM,rmse,1.6840330742280525
+Nyc_taxi_green_dec_2016,reg,Neural Network,rmse,1.9162638682014428
+Nyc_taxi_green_dec_2016,reg,Random Forest,rmse,1.8759687626688513
+Nyc_taxi_green_dec_2016,reg,Xgboost,rmse,1.8509562021866242

@@ -37,11 +37,11 @@ def generate_models():
         # house_sales.get_data(), #done
         # internet_advertisement.get_data(), #done
         # kddcup09_churn.get_data(), #done
-        # kddcup09_upselling.get_data(), #done
-        # mfeat_factors.get_data(), 
-        # moneyball.get_data(), 
-        # nyc_taxi_gree_dec2016.get_data(), # more time needed 
-        # onlinenewspopularity.get_data(), 
+        kddcup09_upselling.get_data(), #done
+        mfeat_factors.get_data(), 
+        moneyball.get_data(), 
+        nyc_taxi_gree_dec2016.get_data(), # more time needed 
+        onlinenewspopularity.get_data(), 
         # phishing_websites.get_data(), 
         # santander_transaction_volume.get_data(),
         # segment.get_data(), 
