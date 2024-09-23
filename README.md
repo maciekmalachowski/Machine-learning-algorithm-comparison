@@ -21,19 +21,19 @@
 
 ### 1. Dataset Fetching:
 - The project uses the `fetch_openml` function from sklearn.datasets to download various datasets from `OpenML`.
-- Datasets are categorized into three types: regression, binary classification, and multiclass classification, with `RMSE` used as the evaluation metric for regression tasks and `accuracy` used for both binary and multiclass classification tasks.
+- Datasets are categorized into three types: _**regression**_, _**binary classification**_, and _**multiclass classification**_, with `RMSE` used as the evaluation metric for regression tasks and `accuracy` used for both binary and multiclass classification tasks.
   
 ### 2. Model Generation:
 - The `generate_models()` function automates the training of different algorithms (
-            Baseline,
-            Linear,
-            CatBoost,
-            Decision Tree,
-            Extra Trees,
-            LightGBM,
-            Neural Network,
-            Random Forest,
-            Xgboost) across a variety of datasets.
+            **Baseline**,
+            **Linear**,
+            **CatBoost**,
+            **Decision Tree**,
+            **Extra Trees**,
+            **LightGBM**,
+            **Neural Network**,
+            **Random Forest**,
+            **Xgboost** ) across a variety of datasets.
 - All models were trained with advanced feature engineering disabled and without ensembling. A 5-fold cross-validation with shuffle and stratification (for classification tasks) was applied. During training, various hyperparameter configurations (where applicable) were explored for each algorithm.
 - Results of the best-performing models are logged in a leaderboard and saved to a CSV file.
 
