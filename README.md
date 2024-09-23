@@ -26,7 +26,6 @@
 ### 2. Model Generation:
 - The `generate_models()` function automates the training of different algorithms (
             **Baseline**,
-            **Linear**,
             **CatBoost**,
             **Decision Tree**,
             **Extra Trees**,
