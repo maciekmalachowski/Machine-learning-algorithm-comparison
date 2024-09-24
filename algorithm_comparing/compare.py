@@ -365,7 +365,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <img src="/{rel_path}/{os.path.relpath(plot)}">
 </div>
 <div class="basis-1/2 text-center">
-<h2 class="text-4xl my-2 px-2"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
+<h2 class="text-4xl my-2 mx-8"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
 <div class="mx-8 text-left">
 <p><b>Metric:</b> {datasets[dataset_name]["metric"]}</p>
 <p><b>{alg1}</b> {round(float(metric1),5):,} - vs - {round(float(metric2),5):,} <b>{alg2}</b></p>
