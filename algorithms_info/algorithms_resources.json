@@ -3,28 +3,21 @@
     {
         "desc": "<b>Baseline</b> is the simplest algorithm that provides predictions without complex computations. For classification tasks, the Baseline returns the most frequent class. For regression tasks, the Baseline returns the average of the target from training data.",
         "license": "License for Scikit-Learn implementation of Baseline: New BSD License",
-        "ref": ""
-    },
-
-    "linear":
-    {
-        "desc":"<b>Linear</b> (Linear Regression for regression tasks, and Logistic Regression for classification tasks) is a linear approach of modelling relationship between target valiable and explanatory variables.",
-        "license": "License for Scikit-Learn implementation of Random Forest: New BSD License",
-        "ref":""
+        "ref": "<li>Nathan de Lara, Edouard Pineau <a href='https://arxiv.org/abs/1810.09155' target='_blank' style='text-decoration:none;'>Baseline Algorithm for Graph Classification</a>,2018</li>"
     },
 
     "catboost":
     {
         "desc": "<a href='https://mljar.com/glossary/catboost/' target='_blank' style='text-decoration:none;'><b>CatBoost</b></a> provides Machine Learning algorithms under gradient boost framework developed by Yandex. It supports both numerical and categorical features.<br><br>It works on Linux, Windows, and macOS systems. It provides interfaces to Python and R. Trained model can be also used in C++, Java, C+, Rust, CoreML, ONNX, PMML.",
         "license": "Apache-2.0 License",
-        "ref": "<li>Anna Veronika Dorogush, Andrey Gulin, Gleb Gusev, Nikita Kazeev, Liudmila Ostroumova Prokhorenkova, Aleksandr Vorobev, <a href='https://arxiv.org/abs/1706.09516' target='_blank' style='text-decoration:none;'>Fighting biases with dynamic boosting</a> , arXiv:1706.09516, 2017.</li><li>Anna Veronika Dorogush, Vasily Ershov, Andrey Gulin, <a href='http://learningsys.org/nips17/assets/papers/paper_11.pdf' target='_blank' style='text-decoration:none;'>CatBoost: gradient boosting with categorical features support</a>, Workshop on ML Systems at NIPS 2017.</li>"
+        "ref": "<li>Anna Veronika Dorogush, Andrey Gulin, Gleb Gusev, Nikita Kazeev, Liudmila Ostroumova Prokhorenkova, Aleksandr Vorobev, <a href='https://arxiv.org/abs/1706.09516' target='_blank' style='text-decoration:none;'>Fighting biases with dynamic boosting</a>, 2017.</li><li>Anna Veronika Dorogush, Vasily Ershov, Andrey Gulin, <a href='http://learningsys.org/nips17/assets/papers/paper_11.pdf' target='_blank' style='text-decoration:none;'>CatBoost: gradient boosting with categorical features support</a>, Workshop on ML Systems at NIPS 2017.</li>"
     },
 
     "decision-tree":
     {
         "desc": "<a href='https://mljar.com/glossary/decision-tree/' target='_blank' style='text-decoration:none;'><b>Decision Tree</b></a> is a supervised algorithm used in machine learning. It is using a binary tree graph (each node has two children) to assign for each data sample a target value. The target values are presented in the tree leaves. To reach the leaf, the sample is propagated through nodes, starting at the root node. In each node a decision is made, to which descendant node it should go. A decision is made based on the selected sample’s feature. It is usually one feature used to make the decision (one feature is used in the node to make a decision). Decision tree learning is a process of finding the optimal rules in each internal tree node according to the selected metric.",
         "license": "License for Scikit-Learn implementation of Decision Tree: New BSD License",
-        "ref": "<li>L. Breiman, J. Friedman, R. Olshen, and C. Stone, Classification and Regression Trees, 1984</li><li>T. Hastie, R. Tibshirani and J. Friedman., Elements of Statistical Learning, Springer, 2009.</li>"
+        "ref": "<li>L. Breiman, J. Friedman, R. Olshen, and C. Stone, <a href='https://rafalab.dfci.harvard.edu/pages/649/section-11.pdf' target='_blank' style='text-decoration:none;'>Classification and Regression Trees</a>, 1984</li><li>T. Hastie, R. Tibshirani and J. Friedman., <a href='https://hastie.su.domains/Papers/ESLII.pdf' target='_blank' style='text-decoration:none;'>Elements of Statistical Learning</a>, Springer, 2009.</li>"
     },
 
     "extra-trees":
@@ -52,7 +45,7 @@
     {
         "desc": "<a href='https://www.ibm.com/topics/neural-networks' target='_blank' style='text-decoration:none;'><b>Neural Network</b></a> (Multi-Layer Perceptron, MLP) is an algorithm inspired by biological neural networks. The MLP consists of connected graph of processing units that mimic the neurons. The connections between neurons are so-called weights. Their values are selected during the training process. The training goal is to minimize the error between values predicted by MLP and true values.",
         "license": "License for Scikit-Learn implementation of Neural Network: New BSD License",
-        "ref": "<li>Hinton, Geoffrey E., Connectionist learning procedures, Artificial intelligence, vol.40, pp.185-234, 1989</li>"
+        "ref": "<li>Hinton, Geoffrey E., <a href='https://www.cs.toronto.edu/~hinton/absps/clp.pdf' target='_blank' style='text-decoration:none;'>Connectionist learning procedures</a>, Artificial intelligence, vol.40, pp.185-234, 1989</li>"
     },
 
     "random-forest":

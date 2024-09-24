@@ -255,3 +255,83 @@ Nyc_taxi_green_dec_2016,reg,LightGBM,rmse,1.6840330742280525
 Nyc_taxi_green_dec_2016,reg,Neural Network,rmse,1.9162638682014428
 Nyc_taxi_green_dec_2016,reg,Random Forest,rmse,1.8759687626688513
 Nyc_taxi_green_dec_2016,reg,Xgboost,rmse,1.8509562021866242
+Online_news_popularity,reg,Baseline,rmse,11626.986215033903
+Online_news_popularity,reg,CatBoost,rmse,11480.916246309573
+Online_news_popularity,reg,Decision Tree,rmse,12134.234685714342
+Online_news_popularity,reg,Extra Trees,rmse,11494.815414327706
+Online_news_popularity,reg,LightGBM,rmse,11502.71557835617
+Online_news_popularity,reg,Neural Network,rmse,11518.373336214794
+Online_news_popularity,reg,Random Forest,rmse,11524.473399207222
+Online_news_popularity,reg,Xgboost,rmse,11495.281435774014
+Phishing_websites,binary,Baseline,accuracy,0.5569425599276345
+Phishing_websites,binary,CatBoost,accuracy,0.9694255992763455
+Phishing_websites,binary,Decision Tree,accuracy,0.9176843057440073
+Phishing_websites,binary,Extra Trees,accuracy,0.9421981004070556
+Phishing_websites,binary,LightGBM,accuracy,0.9763003165988241
+Phishing_websites,binary,Neural Network,accuracy,0.9685210312075984
+Phishing_websites,binary,Random Forest,accuracy,0.9448213478064225
+Phishing_websites,binary,Xgboost,accuracy,0.9746720940750792
+Santander_transaction_value,reg,Baseline,rmse,8235688.00320071
+Santander_transaction_value,reg,CatBoost,rmse,7129743.583755279
+Santander_transaction_value,reg,Decision Tree,rmse,7627197.615011026
+Santander_transaction_value,reg,Extra Trees,rmse,7451816.451098976
+Santander_transaction_value,reg,LightGBM,rmse,6909539.8647808125
+Santander_transaction_value,reg,Neural Network,rmse,445432557.55618775
+Santander_transaction_value,reg,Random Forest,rmse,7390566.475295732
+Santander_transaction_value,reg,Xgboost,rmse,7028229.742770633
+Segment,multi,Baseline,accuracy,0.14285714285714285
+Segment,multi,CatBoost,accuracy,0.9783549783549783
+Segment,multi,Decision Tree,accuracy,0.8995670995670996
+Segment,multi,Extra Trees,accuracy,0.9558441558441558
+Segment,multi,LightGBM,accuracy,0.9826839826839827
+Segment,multi,Neural Network,accuracy,0.9688311688311688
+Segment,multi,Random Forest,accuracy,0.9653679653679653
+Segment,multi,Xgboost,accuracy,0.9783549783549783
+Space_ga,reg,Baseline,rmse,0.1981019046986445
+Space_ga,reg,CatBoost,rmse,0.10542999396072457
+Space_ga,reg,Decision Tree,rmse,0.1398792063666498
+Space_ga,reg,Extra Trees,rmse,0.12972853230149103
+Space_ga,reg,LightGBM,rmse,0.10619743232912658
+Space_ga,reg,Neural Network,rmse,0.10030445813268155
+Space_ga,reg,Random Forest,rmse,0.12196860560678892
+Space_ga,reg,Xgboost,rmse,0.10548011326550055
+Spambase,binary,Baseline,accuracy,0.6059552271245382
+Spambase,binary,CatBoost,accuracy,0.9621821343186264
+Spambase,binary,Decision Tree,accuracy,0.902629863073245
+Spambase,binary,Extra Trees,accuracy,0.9287111497500543
+Spambase,binary,LightGBM,accuracy,0.9623994783742664
+Spambase,binary,Neural Network,accuracy,0.9443599217561399
+Spambase,binary,Random Forest,accuracy,0.9341447511410563
+Spambase,binary,Xgboost,accuracy,0.9589219734840252
+Us_crime,reg,Baseline,rmse,0.232997700872244
+Us_crime,reg,CatBoost,rmse,0.13125816545588043
+Us_crime,reg,Decision Tree,rmse,0.15615052057427145
+Us_crime,reg,Extra Trees,rmse,0.13444433799177388
+Us_crime,reg,LightGBM,rmse,0.12972112105104905
+Us_crime,reg,Neural Network,rmse,0.1364126695356301
+Us_crime,reg,Random Forest,rmse,0.13529322725662665
+Us_crime,reg,Xgboost,rmse,0.13022554849909265
+Vehicle,multi,Baseline,accuracy,0.2576832151300236
+Vehicle,multi,CatBoost,accuracy,0.8085106382978723
+Vehicle,multi,Decision Tree,accuracy,0.6855791962174941
+Vehicle,multi,Extra Trees,accuracy,0.7683215130023641
+Vehicle,multi,LightGBM,accuracy,0.8026004728132388
+Vehicle,multi,Neural Network,accuracy,0.8191489361702128
+Vehicle,multi,Random Forest,accuracy,0.7624113475177305
+Vehicle,multi,Xgboost,accuracy,0.7813238770685579
+Wdbc,binary,Baseline,accuracy,0.6274165202108963
+Wdbc,binary,CatBoost,accuracy,0.9789103690685413
+Wdbc,binary,Decision Tree,accuracy,0.9349736379613357
+Wdbc,binary,Extra Trees,accuracy,0.9789103690685413
+Wdbc,binary,LightGBM,accuracy,0.9753954305799648
+Wdbc,binary,Neural Network,accuracy,0.9648506151142355
+Wdbc,binary,Random Forest,accuracy,0.9736379613356766
+Wdbc,binary,Xgboost,accuracy,0.9789103690685413
+Wine_quality,reg,Baseline,rmse,0.873313042142878
+Wine_quality,reg,CatBoost,rmse,0.5967187224086109
+Wine_quality,reg,Decision Tree,rmse,0.7387912808250413
+Wine_quality,reg,Extra Trees,rmse,0.711410574827578
+Wine_quality,reg,LightGBM,rmse,0.6036915987129114
+Wine_quality,reg,Neural Network,rmse,0.6868750739481793
+Wine_quality,reg,Random Forest,rmse,0.6816226699369166
+Wine_quality,reg,Xgboost,rmse,0.5947741991184883

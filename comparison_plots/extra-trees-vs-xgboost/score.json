@@ -1,1 +1,1 @@
-{"extra-trees": {"binary": 1, "multi": 0, "reg": 1}, "xgboost": {"binary": 14, "multi": 5, "reg": 10}, "win": "xgboost"}
+{"extra-trees": {"binary": 1, "multi": 0, "reg": 2}, "xgboost": {"binary": 16, "multi": 7, "reg": 14}, "win": "xgboost"}

@@ -1,1 +1,1 @@
-{"neural-network": {"binary": 3, "multi": 5, "reg": 5}, "random-forest": {"binary": 12, "multi": 0, "reg": 6}, "win": "random-forest"}
+{"neural-network": {"binary": 5, "multi": 7, "reg": 7}, "random-forest": {"binary": 13, "multi": 0, "reg": 9}, "win": "random-forest"}

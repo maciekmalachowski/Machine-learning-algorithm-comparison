@@ -1,1 +1,1 @@
-{"extra-trees": {"binary": 2, "multi": 3, "reg": 1}, "random-forest": {"binary": 14, "multi": 2, "reg": 10}, "win": "random-forest"}
+{"extra-trees": {"binary": 3, "multi": 4, "reg": 3}, "random-forest": {"binary": 16, "multi": 3, "reg": 13}, "win": "random-forest"}

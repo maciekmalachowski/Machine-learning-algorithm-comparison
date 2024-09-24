@@ -1,1 +1,1 @@
-{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "lightgbm": {"binary": 16, "multi": 5, "reg": 11}, "win": "lightgbm"}
+{"baseline": {"binary": 0, "multi": 0, "reg": 0}, "lightgbm": {"binary": 19, "multi": 7, "reg": 16}, "win": "lightgbm"}

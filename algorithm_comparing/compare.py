@@ -9,58 +9,57 @@ from datasets import abalone, adult, airlines_depdelay_1m,  allstate_claims_seve
 
 def generate_models():
     datasets = [
-        # abalone.get_data(), #done
-        # adult.get_data(), #done
-        # airlines_depdelay_1m.get_data(), #done 
-        # allstate_claims_severity.get_data(), #done
-        # amazon_commerce_reviews.get_data(), #done
-        # amazon_employee_access.get_data(), #done
-        # apsfailure.get_data(), #done
-        # bank_marketing.get_data(), #done
-        # banknote_authentication.get_data(), #done
-        # bioresponse.get_data(), #done
-        # black_friday.get_data(), #done
-        # boston.get_data(), #done
-        # buzzinsocialmedia_twitter.get_data(), #done
-        # car.get_data(), #done
-        # churn.get_data(), #done
-        # click_prediction_small.get_data(), #done
-        # cnae_9.get_data(), #done
-        # colleges.get_data(), #done
-        # connect_4.get_data(), #done
-        # credit_approval.get_data(), #done
-        # credit_g.get_data(), #done
-        # diabetes.get_data(), #done
-        # diamonds.get_data(), #done
-        # electricity.get_data(), #done
-        # higgs.get_data(), #done
-        # house_sales.get_data(), #done
-        # internet_advertisement.get_data(), #done
-        # kddcup09_churn.get_data(), #done
-        kddcup09_upselling.get_data(), #done
+        abalone.get_data(), 
+        adult.get_data(), 
+        airlines_depdelay_1m.get_data(),  
+        allstate_claims_severity.get_data(), 
+        amazon_commerce_reviews.get_data(), 
+        amazon_employee_access.get_data(), 
+        apsfailure.get_data(), 
+        bank_marketing.get_data(), 
+        banknote_authentication.get_data(), 
+        bioresponse.get_data(), 
+        black_friday.get_data(), 
+        boston.get_data(), 
+        buzzinsocialmedia_twitter.get_data(), 
+        car.get_data(), 
+        churn.get_data(), 
+        click_prediction_small.get_data(), 
+        cnae_9.get_data(), 
+        colleges.get_data(), 
+        connect_4.get_data(), 
+        credit_approval.get_data(), 
+        credit_g.get_data(), 
+        diabetes.get_data(), 
+        diamonds.get_data(), 
+        electricity.get_data(), 
+        higgs.get_data(), 
+        house_sales.get_data(), 
+        internet_advertisement.get_data(), 
+        kddcup09_churn.get_data(), 
+        kddcup09_upselling.get_data(), 
         mfeat_factors.get_data(), 
         moneyball.get_data(), 
-        nyc_taxi_gree_dec2016.get_data(), # more time needed 
+        nyc_taxi_gree_dec2016.get_data(), 
         onlinenewspopularity.get_data(), 
-        # phishing_websites.get_data(), 
-        # santander_transaction_volume.get_data(),
-        # segment.get_data(), 
-        # space_ga.get_data(), 
-        # spambase.get_data(), 
-        # us_crime.get_data(), 
-        # vehicle.get_data(), 
-        # wdbc.get_data(), 
-        # wine_quality.get_data() 
+        phishing_websites.get_data(), 
+        santander_transaction_volume.get_data(), 
+        segment.get_data(), 
+        space_ga.get_data(), 
+        spambase.get_data(), 
+        us_crime.get_data(), 
+        vehicle.get_data(), 
+        wdbc.get_data(), 
+        wine_quality.get_data() 
     ]
 
     algorithms=[
             'Baseline',
-            # 'Linear',
             'CatBoost',
             'Decision Tree',
             'Extra Trees',
             'LightGBM',
-            # 'Nearest Neighbors',
+            # 'Nearest Neighbors', TO DO
             'Neural Network',
             'Random Forest',
             'Xgboost'
@@ -366,7 +365,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <img src="/{rel_path}/{os.path.relpath(plot)}">
 </div>
 <div class="basis-1/2 text-center">
-<h2 class="text-4xl mb-2 mt-2"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
+<h2 class="text-4xl my-2 px-2"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
 <div class="mx-8 text-left">
 <p><b>Metric:</b> {datasets[dataset_name]["metric"]}</p>
 <p><b>{alg1}</b> {round(float(metric1),5):,} - vs - {round(float(metric2),5):,} <b>{alg2}</b></p>
@@ -392,7 +391,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
     del df
     
 
-# generate_models()
+generate_models()
 compare()
 
 
