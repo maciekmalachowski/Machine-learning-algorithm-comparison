@@ -295,16 +295,16 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <section>
 <div class="flex-col sm:flex-row hidden sm:flex bg-slate-50 rounded-lg">
 <div class="basis-1/2 place-self-center">
-<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto">
+<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto" alt="{name1} logo">
 </div>
 <div class="basis-1/2 place-self-center">
-<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto">
+<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto" alt="{name2} logo">
 </div>
 </div>
 
 <div class="flex flex-col sm:flex-row px-8">
 <div class="basis-1/2 text-justify sm:mr-8 mb-8 sm:mb-0">
-<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg">
+<img src="/machine-learning/logo/{name1}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg" alt="{name1} logo">
 <p>{resources[name1]["desc"]}</p>
 <h2 class='mb-2'>References</h2>
 <ul class='text-left'>
@@ -315,7 +315,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 </div>
 
 <div class="basis-1/2 text-justify sm:ml-8">
-<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg">
+<img src="/machine-learning/logo/{name2}_logo.png" class="not-prose w-96 mx-auto sm:hidden bg-slate-50 rounded-lg" alt="{name2} logo">
 <p>{resources[name2]["desc"]}</p>
 <h2 class='mb-2'>References</h2>
 <ul class='text-left'>
@@ -337,8 +337,8 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
 <p class="text-2xl"><span class="text-[#0099cc]">{alg1}</span> <b>{score[name1]["reg"]}:{score[name2]["reg"]}</b> <span class="text-[#0099cc]">{alg2}</span></p>
 </div>
 <div class="basis-1/2 bg-slate-50 rounded-lg">
-<img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-72 mx-auto">
-<img src='/machine-learning/compete.svg' class="not-prose w-64 mx-auto">
+<img src="/machine-learning/logo/{score["win"]}_logo.png" class="not-prose w-72 mx-auto" alt="winner">
+<img src='/machine-learning/compete.svg' class="not-prose w-64 mx-auto" alt="podium">
 </div>
 </div>
 </section>
@@ -362,7 +362,7 @@ description: Comparison of {alg1} and {alg2} with examples on different datasets
                     content += f'''
 <div class="flex flex-col sm:flex-row">
 <div class="basis-1/2 text-center">
-<img src="/{rel_path}/{os.path.relpath(plot)}">
+<img src="/{rel_path}/{os.path.relpath(plot)}" alt="{dataset_name} plot">
 </div>
 <div class="basis-1/2 text-center">
 <h2 class="text-4xl my-2 mx-8"><span class="text-[#0099cc]">{dataset_name.replace("_", " ").capitalize()}</span> dataset</h2>
